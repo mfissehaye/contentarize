@@ -1,6 +1,6 @@
 {
   "name": "@mfissehaye/contentarize",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Headless CMS editing tools for React applications",
   "type": "module",
   "repository": {
