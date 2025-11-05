@@ -240,7 +240,7 @@ export function CMSProvider({
                       className={classNames(
                         "ctz:rounded-full ctz:w-9 ctz:h-9 ctz:grid ctz:place-content-center ctz:relative",
                         {
-                          "opacity-20": disabledItems.length === 0,
+                          "ctz:opacity-20": disabledItems.length === 0,
                           "ctz:bg-yellow-500 ctz:text-black ":
                             disabledItems.length > 0,
                         }

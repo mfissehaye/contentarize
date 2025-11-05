@@ -60,11 +60,11 @@ const ToolbarButton: React.FC<ToolbarButtonProps> = ({
   <button
     type="button"
     className={classNames(
-      "p-2 rounded-md transition-colors",
+      "ctz:p-2 ctz:rounded-md ctz:transition-colors",
       isActive
-        ? "bg-blue-500 text-white"
-        : "bg-gray-200 text-gray-700 hover:bg-gray-300",
-      disabled && "opacity-50 cursor-not-allowed"
+        ? "ctz:bg-blue-500 ctz:text-white"
+        : "ctz:bg-gray-200 ctz:text-gray-700 ctz:hover:bg-gray-300",
+      disabled && "ctz:opacity-50 ctz:cursor-not-allowed"
     )}
     onClick={onClick}
     disabled={disabled}

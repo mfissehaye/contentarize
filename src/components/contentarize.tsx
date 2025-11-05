@@ -91,8 +91,8 @@ export default function Contentarize<Fields extends Field[]>({
                 className={classNames(
                   "ctz:absolute ctz:bg-amber-500/10 ctz:border ctz:border-amber-300/40! ctz:cursor-pointer ctz:transition-opacity ctz:child ctz:z-20",
                   {
-                    "opacity-100": hovered,
-                    "opacity-0": !hovered,
+                    "ctz:opacity-100": hovered,
+                    "ctz:opacity-0": !hovered,
                   }
                 )}
                 style={{
