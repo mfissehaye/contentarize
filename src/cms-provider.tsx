@@ -24,7 +24,7 @@ import { IconType } from "react-icons/lib";
 import MetaContentForm from "./meta-content-form";
 import Modal from "./components/modal";
 import { IframeWithStyles } from "./components/IframeWithStyles";
-import "./tailwind.css";
+// CSS is imported in index.ts to ensure styles are bundled
 
 export const CMSContext = createContext<ContextType>({
   editMode: false,

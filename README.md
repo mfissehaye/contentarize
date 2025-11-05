@@ -20,9 +20,12 @@ npm install @mfissehaye/contentarize
 
 ## Usage
 
+### Basic Setup
+
 ```tsx
 import { Contentarize } from '@mfissehaye/contentarize';
-import '@mfissehaye/contentarize/styles';
+// Import the CSS file - REQUIRED for styles to work
+import '@mfissehaye/contentarize/styles.css';
 
 function App() {
   return (
@@ -32,6 +35,17 @@ function App() {
   );
 }
 ```
+
+### Tailwind CSS Integration
+
+This package uses Tailwind CSS v4. If your project also uses Tailwind, see [TAILWIND_INTEGRATION.md](./TAILWIND_INTEGRATION.md) for detailed integration instructions.
+
+**Quick Start**: Simply import the CSS file:
+```tsx
+import '@mfissehaye/contentarize/styles.css';
+```
+
+If styles aren't loading, check the [Tailwind Integration Guide](./TAILWIND_INTEGRATION.md) for troubleshooting.
 
 ## Documentation
 
