@@ -1,0 +1,10 @@
+node_modules
+
+/.cache
+/build
+/dist
+.env
+.DS_Store
+
+# React Router
+/.react-router/
