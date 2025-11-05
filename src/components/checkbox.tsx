@@ -14,7 +14,7 @@ export default function Checkbox({
 }) {
   return (
     <div>
-      <label className="ctz-flex ctz-items-center ctz-space-x-3 ctz-cursor-pointer ctz-mb-0!">
+      <label className="ctz:flex ctz:items-center ctz:space-x-3 ctz:cursor-pointer ctz:mb-0!">
         <input
           type="checkbox"
           className="ctz:hidden peer"
@@ -23,19 +23,19 @@ export default function Checkbox({
           ref={ref}
           onChange={(e) => onChange(e.currentTarget.checked)}
         />
-        <span className="ctz-inline-flex ctz-items-center ctz-gap-x-3">
+        <span className="ctz:inline-flex ctz:items-center ctz:gap-x-3">
           <button
             type="button"
             onClick={() => onChange(!checked)}
             className={classNames(
-              "ctz-w-4 ctz-h-4 ctz-rounded-sm ctz-ring-2 ctz-ring-offset-2 ctz-ring-blue-500 ctz-relative ctz-inline-block",
+              "ctz:w-4 ctz:h-4 ctz:rounded-sm ctz:ring-2 ctz:ring-offset-2 ctz:ring-blue-500 ctz:relative ctz:inline-block",
               {
-                "ctz-bg-primary": checked,
+                "ctz:bg-primary": checked,
               }
             )}
             aria-hidden="true"
           ></button>
-          <span className="ctz-inline-block">{label}</span>
+          <span className="ctz:inline-block">{label}</span>
         </span>
       </label>
     </div>

@@ -25,20 +25,20 @@ export default function Uploader({
   };
 
   return (
-    <div className="ctz-space-y-3">
-      <div className="ctz-grid ctz-grid-cols-5 ctz-gap-10">
+    <div className="ctz:space-y-3">
+      <div className="ctz:grid ctz:grid-cols-5 ctz:gap-10">
         {stagedImages.map((_, i) => (
           <div key={`staged-image-${i}`} className="space-y-3">
-            <div className="ctz-w-32 ctz-h-32 ctz-rounded ctz-bg-gray-100 ctz-overflow-hidden">
+            <div className="ctz:w-32 ctz:h-32 ctz:rounded ctz:bg-gray-100 ctz:overflow-hidden">
               <img
                 src={URL.createObjectURL(_)}
                 alt="Staged"
-                className="ctz-w-full ctz-h-full ctz-object-cover"
+                className="ctz:w-full ctz:h-full ctz:object-cover"
               />
             </div>
             <button
               type="button"
-              className="btn ctz-block ctz-w-full ctz-p-2.5 ctz-rounded-md ctz-bg-black ctz-text-white ctz-uppercase ctz-tracking-wide ctz-text-sm"
+              className="btn ctz:block ctz:w-full ctz:p-2.5 ctz:rounded-md ctz:bg-black ctz:text-white ctz:uppercase ctz:tracking-wide ctz:text-sm"
               onClick={() => upload(_)}
             >
               Upload
@@ -46,7 +46,7 @@ export default function Uploader({
           </div>
         ))}
       </div>
-      <div className="ctz-p-10 ctz-rounded ctz-border ctz-border-dashed ctz-flex ctz-flex-col ctz-justify-center ctz-items-center ctz-space-y-1 ctz-bg-gray-50">
+      <div className="ctz:p-10 ctz:rounded ctz:border ctz:border-dashed ctz:flex ctz:flex-col ctz:justify-center ctz:items-center ctz:space-y-1 ctz:bg-gray-50">
         <input
           type="file"
           className="ctz:hidden"
@@ -61,9 +61,9 @@ export default function Uploader({
         <button
           type="button"
           onClick={() => imagePickerRef.current?.click()}
-          className="ctz-inline-flex ctz-flex-col ctz-items-center"
+          className="ctz:inline-flex ctz:flex-col ctz:items-center"
         >
-          <UploadCloudIcon className="ctz-w-10 ctz-h-10" />
+          <UploadCloudIcon className="ctz:w-10 ctz:h-10" />
           <span>Upload File</span>
         </button>
       </div>

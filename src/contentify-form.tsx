@@ -117,13 +117,13 @@ export default function ContentifyForm({ onClose }: { onClose: () => void }) {
 
   return (
     <div>
-      <div className="ctz-p-5 ctz-bg-gray-100 ctz-flex ctz-justify-between ctz-items-center ctz-sticky ctz-top-0">
-        <h1 className="ctz-font-semibold">
+      <div className="ctz:p-5 ctz:bg-gray-100 ctz:flex ctz:justify-between ctz:items-center ctz:sticky ctz:top-0">
+        <h1 className="ctz:font-semibold">
           {isCreatingNew ? "Add" : "Edit"}{" "}
           {_startCase(editing.id.replace(/\.-?\d+$/, ""))}
         </h1>
-        <button type="button" onClick={onClose} className="ctz-md:hidden">
-          <strong className="ctz-text-3xl">
+        <button type="button" onClick={onClose} className="ctz:md:hidden">
+          <strong className="ctz:text-3xl">
             <XIcon />
           </strong>
         </button>
@@ -133,21 +133,21 @@ export default function ContentifyForm({ onClose }: { onClose: () => void }) {
               if (confirm("Are you sure you want to delete this item?"))
                 onRemove();
             }}
-            className="ctz-text-red-500"
+            className="ctz:text-red-500"
           >
-            <Trash2 className="ctz-w-5 ctz-h-5" />
+            <Trash2 className="ctz:w-5 ctz:h-5" />
           </button>
         )}
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="ctz-p-5 ctz-space-y-5 ctz-pb-44"
+        className="ctz:p-5 ctz:space-y-5 ctz:pb-44"
       >
         {editing.inputs.map((input) => {
           const id = _snakeCase(input?.label);
           return ["image", "video"].includes(input.type) ? (
-            <div className="ctz-space-y-1" key={input.id}>
-              <label className="ctz-font-medium">{input?.label}</label>
+            <div className="ctz:space-y-1" key={input.id}>
+              <label className="ctz:font-medium">{input?.label}</label>
               <ImagePicker
                 isVideo={input.type === "video"}
                 value={String(watch(input.id) || "")}
@@ -175,8 +175,8 @@ export default function ContentifyForm({ onClose }: { onClose: () => void }) {
               onChangeOpenInNewTab={() => {}}
             />
           ) : input.type === "rich-text" ? (
-            <div className="ctz-space-y-1" key={input.id}>
-              <label className="ctz-font-medium">{input?.label}</label>
+            <div className="ctz:space-y-1" key={input.id}>
+              <label className="ctz:font-medium">{input?.label}</label>
               <RichTextEditor
                 value={watch(input.id) || ""}
                 onChange={(value: string) => {
@@ -185,53 +185,53 @@ export default function ContentifyForm({ onClose }: { onClose: () => void }) {
               />
             </div>
           ) : (
-            <div className="ctz-space-y-1" key={input.id}>
-              <label htmlFor={id} className="ctz-font-medium">
+            <div className="ctz:space-y-1" key={input.id}>
+              <label htmlFor={id} className="ctz:font-medium">
                 {input?.label}
               </label>
               <input
                 type="text"
                 id={id}
                 placeholder={input?.label}
-                className="ctz-p-3 ctz-w-full ctz-border ctz-rounded ctz-focus:ring-0 ctz-focus:outline-none"
+                className="ctz:p-3 ctz:w-full ctz:border ctz:rounded ctz:focus:ring-0 ctz:focus:outline-none"
                 {...register(input.id)}
               />
             </div>
           );
         })}
-        <div className="ctz-fixed ctz-inset-x-0 ctz-max-w-[450px] ctz-bottom-0 ctz-ml-auto ctz-p-3 ctz-bg-gray-50 ctz-border-t ctz-border-gray-200 ctz-space-y-3">
+        <div className="ctz:fixed ctz:inset-x-0 ctz:max-w-[450px] ctz:bottom-0 ctz:ml-auto ctz:p-3 ctz:bg-gray-50 ctz:border-t ctz:border-gray-200 ctz:space-y-3">
           {!isCreatingNew && /\.\d+$/.test(editing.id) && (
-            <div className="ctz-flex ctz-justify-between ctz-items-center">
-              <div className="ctz-space-x-2">
+            <div className="ctz:flex ctz:justify-between ctz:items-center">
+              <div className="ctz:space-x-2">
                 <button
-                  className="ctz-p-2.5 ctz-rounded ctz-btn"
+                  className="ctz:p-2.5 ctz:rounded ctz:btn"
                   title="Move item first"
                   onClick={moveToFirst}
                 >
-                  <ChevronsLeft className="ctz-w-5 ctz-h-5" />
+                  <ChevronsLeft className="ctz:w-5 ctz:h-5" />
                 </button>
                 <button
-                  className="ctz-p-2.5 ctz-rounded ctz-btn"
+                  className="ctz:p-2.5 ctz:rounded ctz:btn"
                   title="Move item up"
                   onClick={moveUp}
                 >
-                  <ChevronLeft className="ctz-w-5 ctz-h-5" />
+                  <ChevronLeft className="ctz:w-5 ctz:h-5" />
                 </button>
               </div>
-              <div className="ctz-space-x-2">
+              <div className="ctz:space-x-2">
                 <button
-                  className="ctz-p-2.5 ctz-rounded ctz-btn"
+                  className="ctz:p-2.5 ctz:rounded ctz:btn"
                   title="Move item down"
                   onClick={moveDown}
                 >
-                  <ChevronRight className="ctz-w-5 ctz-h-5" />
+                  <ChevronRight className="ctz:w-5 ctz:h-5" />
                 </button>
                 <button
-                  className="ctz-p-2.5 ctz-rounded ctz-btn"
+                  className="ctz:p-2.5 ctz:rounded ctz:btn"
                   title="Move item last"
                   onClick={moveToEnd}
                 >
-                  <ChevronsRight className="ctz-w-5 ctz-h-5" />
+                  <ChevronsRight className="ctz:w-5 ctz:h-5" />
                 </button>
               </div>
             </div>
@@ -239,7 +239,7 @@ export default function ContentifyForm({ onClose }: { onClose: () => void }) {
 
           <button
             type="submit"
-            className="ctz-btn ctz-w-full ctz-block ctz-p-3 ctz-rounded-full"
+            className="ctz:btn ctz:w-full ctz:block ctz:p-3 ctz:rounded-full"
           >
             Save
           </button>

@@ -10,17 +10,17 @@ export default function Grid({
   onImageSelected: (url: string) => void;
 }) {
   return (
-    <div className="ctz-grid ctz-grid-cols-5 ctz-gap-4 ctz-mt-5 ctz-max-h-60 ctz-overflow-y-auto">
+    <div className="ctz:grid ctz:grid-cols-5 ctz:gap-4 ctz:mt-5 ctz:max-h-60 ctz:overflow-y-auto">
       {images.map((_, i) => (
         <div key={i} className="relative">
           <button
             onClick={() => onImageSelected(_.full)}
-            className="ctz-w-32 ctz-h-32 ctz-bg-gray-100 ctz-rounded-md ctz-overflow-hidden ctz-flex ctz-justify-center ctz-items-center"
+            className="ctz:w-32 ctz:h-32 ctz:bg-gray-100 ctz:rounded-md ctz:overflow-hidden ctz:flex ctz:justify-center ctz:items-center"
           >
             <img
               src={_.thumb}
               alt="Search"
-              className="ctz-object-cover ctz-w-full ctz-h-full"
+              className="ctz:object-cover ctz:w-full ctz:h-full"
             />
           </button>
           {isVideo && (
@@ -28,10 +28,10 @@ export default function Grid({
               href={_.url || "#"}
               target="_blank"
               rel="noreferrer"
-              className="ctz-p-1 ctz-inline-block"
+              className="ctz:p-1 ctz:inline-block"
             >
-              <span className="ctz-inline-flex ctz-items-center ctz-space-x-2">
-                <VideoIcon className="ctz-w-5 ctz-h-5" />
+              <span className="ctz:inline-flex ctz:items-center ctz:space-x-2">
+                <VideoIcon className="ctz:w-5 ctz:h-5" />
                 <span>Preview</span>
               </span>
             </a>

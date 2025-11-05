@@ -102,12 +102,12 @@ export function CMSProvider({
     return (
       <button
         className={classNames(
-          "p-2 transition-colors w-10 h-10 rounded-full grid place-content-center",
-          { "bg-gray-500 text-white": size === screenSize }
+          "ctz:p-2 ctz:transition-colors ctz:w-10 ctz:h-10 ctz:rounded-full ctz:grid ctz:place-content-center",
+          { "ctz:bg-gray-500 ctz:text-white": size === screenSize }
         )}
         onClick={() => setScreenSize(size)}
       >
-        <Icon className="ctz:w-5 h-5" />
+        <Icon className="ctz:w-5 ctz:h-5" />
       </button>
     );
   };
@@ -137,7 +137,7 @@ export function CMSProvider({
           <>
             {children}
             <button
-              className="ctz-bg-amber-600 ctz-text-white fixed ctz-bottom-10 ctz-right-10 ctz-w-14 ctz-h-14 ctz-rounded-full ctz-flex ctz-items-center ctz-justify-center"
+              className="ctz:bg-amber-600 ctz:text-white fixed ctz:bottom-10 ctz:right-10 ctz:w-14 ctz:h-14 ctz:rounded-full ctz:flex ctz:items-center ctz:justify-center"
               onClick={onSignin}
             >
               <SigninIcon />
@@ -148,26 +148,26 @@ export function CMSProvider({
             <div
               className={classNames(
                 {
-                  "ctz-bg-amber-100": isInEditMode,
-                  "ctz-bg-teal-100": !isInEditMode,
+                  "ctz:bg-amber-100": isInEditMode,
+                  "ctz:bg-teal-100": !isInEditMode,
                 },
-                "ctz-py-3 ctz-sticky ctz-top-0 ctz-z-50 ctz-font-semibold ctz-max-w-full ctz-overflow-hidden"
+                "ctz:py-3 ctz:sticky ctz:top-0 ctz:z-50 ctz:font-semibold ctz:max-w-full ctz:overflow-hidden"
               )}
             >
-              <div className="ctz-container ctz-flex ctz-flex-col ctz-lg:flex-row ctz-items-center ctz-justify-between ctz-space-y-3 ctz-lg:space-y-0 ctz-lg:space-x-3">
+              <div className="ctz:container ctz:flex ctz:flex-col ctz:lg:flex-row ctz:items-center ctz:justify-between ctz:space-y-3 ctz:lg:space-y-0 ctz:lg:space-x-3">
                 {editMode ? (
                   <>
                     <div>
                       <button
                         onClick={() => setShowMetaContentForm(true)}
-                        className="ctz-p-2 ctz-rounded-md ctz-transition-colors ctz-flex ctz-items-center ctz-gap-x-2 ctz-bg-black ctz-text-white ctz-px-3 ctz-font-normal! ctz-tracking-wide"
+                        className="ctz:p-2 ctz:rounded-md ctz:transition-colors ctz:flex ctz:items-center ctz:gap-x-2 ctz:bg-black ctz:text-white ctz:px-3 ctz:font-normal! ctz:tracking-wide"
                       >
-                        <SearchCode className="ctz-w-5 ctz-h-5" />
+                        <SearchCode className="ctz:w-5 ctz:h-5" />
                         <span>Meta &amp; SEO</span>
                       </button>
                     </div>
 
-                    <div className="ctz-text-black ctz-flex ctz-items-center ctz-gap-x-5">
+                    <div className="ctz:text-black ctz:flex ctz:items-center ctz:gap-x-5">
                       <ScreensizeButton Icon={Ellipsis} size="default" />
                       <ScreensizeButton Icon={BsPhone} size="phone" />
                       <ScreensizeButton Icon={BsTablet} size="tablet" />
@@ -177,7 +177,7 @@ export function CMSProvider({
                 ) : (
                   <>&nbsp;</>
                 )}
-                <div className="ctz-flex ctz-items-center ctz-gap-x-5">
+                <div className="ctz:flex ctz:items-center ctz:gap-x-5">
                   <button
                     onClick={() => {
                       if (isInEditMode && touched) {
@@ -193,21 +193,21 @@ export function CMSProvider({
                       setEditMode(!editMode);
                       setScreenSize("default");
                     }}
-                    className="ctz-border ctz-rounded-md ctz-py-2 ctz-px-3 ctz-border-gray-300/50 ctz-bg-black ctz-text-white ctz-transition-colors ctz-disabled:bg-transparent ctz-disabled:border-none ctz-inline-flex ctz-items-center ctz-space-x-3 ctz-font-normal! ctz-tracking-wide"
+                    className="ctz:border ctz:rounded-md ctz:py-2 ctz:px-3 ctz:border-gray-300/50 ctz:bg-black ctz:text-white ctz:transition-colors ctz:disabled:bg-transparent ctz:disabled:border-none ctz:inline-flex ctz:items-center ctz:space-x-3 ctz:font-normal! ctz:tracking-wide"
                   >
                     <span>
                       {isInEditMode
                         ? "Exit Editing Mode"
                         : "Enter Editing Mode"}
                     </span>
-                    {isInEditMode && <XIcon className="ctz-w-5 ctz-h-5" />}
+                    {isInEditMode && <XIcon className="ctz:w-5 ctz:h-5" />}
                   </button>
 
                   {touched && (
                     <>
                       <button
                         disabled={!!publishing}
-                        className="ctz-px-5 ctz-py-2 ctz-bg-amber-500 ctz-text-white ctz-rounded-md ctz-disabled:opacity-50 ctz-disabled:cursor-not-allowed"
+                        className="ctz:px-5 ctz:py-2 ctz:bg-amber-500 ctz:text-white ctz:rounded-md ctz:disabled:opacity-50 ctz:disabled:cursor-not-allowed"
                         onClick={async () => {
                           try {
                             setPublishing(true);
@@ -224,7 +224,7 @@ export function CMSProvider({
                         Publish{publishing ? "ing" : ""} changes
                       </button>
                       <button
-                        className="ctz-p-2 ctz-text-red-500"
+                        className="ctz:p-2 ctz:text-red-500"
                         onClick={() =>
                           setPageData(structuredClone(initialPageData))
                         }
@@ -238,30 +238,30 @@ export function CMSProvider({
                     <button
                       onClick={() => setDisabledItems([])}
                       className={classNames(
-                        "ctz-rounded-full ctz-w-9 ctz-h-9 ctz-grid ctz-place-content-center ctz-relative",
+                        "ctz:rounded-full ctz:w-9 ctz:h-9 ctz:grid ctz:place-content-center ctz:relative",
                         {
                           "opacity-20": disabledItems.length === 0,
-                          "ctz-bg-yellow-500 ctz-text-black ":
+                          "ctz:bg-yellow-500 ctz:text-black ":
                             disabledItems.length > 0,
                         }
                       )}
                     >
                       {disabledItems.length > 0 ? (
-                        <span className="ctz-absolute ctz--top-2 ctz--right-2 ctz-w-5 ctz-h-5 ctz-bg-red-500 ctz-rounded-full ctz-text-xs ctz-grid ctz-place-content-center ctz-text-white">
+                        <span className="ctz:absolute ctz:-top-2 ctz:-right-2 ctz:w-5 ctz:h-5 ctz:bg-red-500 ctz:rounded-full ctz:text-xs ctz:grid ctz:place-content-center ctz:text-white">
                           {disabledItems.length}
                         </span>
                       ) : null}
-                      <EyeOffIcon className="ctz-w-4 ctz-h-4" />
+                      <EyeOffIcon className="ctz:w-4 ctz:h-4" />
                     </button>
                   ) : null}
 
-                  <button className="ctz-px-5 ctz-py-2" onClick={onSignout}>
+                  <button className="ctz:px-5 ctz:py-2" onClick={onSignout}>
                     Sign out
                   </button>
                 </div>
               </div>
             </div>
-            <div className="ctz-relative">
+            <div className="ctz:relative">
               {(() => {
                 const widthPx =
                   screenSize === "desktop"
@@ -275,9 +275,9 @@ export function CMSProvider({
                 if (widthPx === undefined) {
                   // Screen size = default → render without iframe
                   return (
-                    <div className="ctz-mx-auto ctz-bg-gray-50">
-                      <div className="ctz-@container">
-                        <div className="ctz-bg-white ctz-border-x ctz-border-gray-200">
+                    <div className="ctz:mx-auto ctz:bg-gray-50">
+                      <div className="ctz:@container">
+                        <div className="ctz:bg-white ctz:border-x ctz:border-gray-200">
                           {children}
                         </div>
                       </div>
@@ -288,10 +288,10 @@ export function CMSProvider({
                 return (
                   <IframeWithStyles
                     widthPx={widthPx}
-                    className="ctz-mx-auto ctz-bg-gray-50 ctz-h-screen ctz-w-full"
+                    className="ctz:mx-auto ctz:bg-gray-50 ctz:h-screen ctz:w-full"
                   >
                     <div className="@container">
-                      <div className="ctz-bg-white ctz-border-x ctz-border-gray-200">
+                      <div className="ctz:bg-white ctz:border-x ctz:border-gray-200">
                         {children}
                       </div>
                     </div>

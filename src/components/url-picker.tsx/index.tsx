@@ -58,21 +58,21 @@ export default function URLPickerRef({
           }}
           onFocus={() => setShowDropdown(true)}
           // onBlur={() => setTimeout(() => setShowDropdown(false), 100)}
-          className="ctz-p-3 ctz-w-full ctz-border ctz-rounded ctz-focus:ring-0 ctz-focus:outline-none"
+          className="ctz:p-3 ctz:w-full ctz:border ctz:rounded ctz:focus:ring-0 ctz:focus:outline-none"
         />
 
         <div
           ref={dropdownRef}
           id="dropdownHover"
           className={classNames(
-            "ctz-z-50 ctz-absolute ctz-inset-x-0 ctz-top-full ctz-bg-white ctz-divide-y ctz-divide-gray-100 ctz-rounded-lg ctz-shadow",
+            "ctz:z-50 ctz:absolute ctz:inset-x-0 ctz:top-full ctz:bg-white ctz:divide-y ctz:divide-gray-100 ctz:rounded-lg ctz:shadow",
             {
               hidden: !showDropdown,
             }
           )} /* dark:bg-gray-700 */
         >
           <ul
-            className="ctz-py-2 ctz-text-sm ctz-text-gray-700" /* dark:text-gray-200 */
+            className="ctz:py-2 ctz:text-sm ctz:text-gray-700" /* dark:text-gray-200 */
             aria-labelledby="dropdownHoverButton"
           >
             {pages.map((page, i) => (
@@ -85,7 +85,7 @@ export default function URLPickerRef({
                     setSearch(page.path);
                     onSetURL(page.path);
                   }}
-                  className="ctz-block ctz-w-full ctz-text-start ctz-px-4 ctz-py-2 ctz-hover:bg-gray-100" /*  dark:hover:bg-gray-600 dark:hover:text-white */
+                  className="ctz:block ctz:w-full ctz:text-start ctz:px-4 ctz:py-2 ctz:hover:bg-gray-100" /*  dark:hover:bg-gray-600 dark:hover:text-white */
                 >
                   {page.title}
                 </button>
@@ -99,7 +99,7 @@ export default function URLPickerRef({
                     setShowDropdown(false);
                     onSetURL(debouncedSearchTerm);
                   }}
-                  className="ctz-block ctz-w-full ctz-text-start ctz-px-4 ctz-py-2 ctz-hover:bg-gray-100"
+                  className="ctz:block ctz:w-full ctz:text-start ctz:px-4 ctz:py-2 ctz:hover:bg-gray-100"
                 >
                   Create {debouncedSearchTerm}
                 </button>

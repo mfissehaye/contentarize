@@ -84,14 +84,14 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
   }
 
   return (
-    <div className="ctz-flex ctz-flex-wrap ctz-gap-2 ctz-p-3 ctz-border-b ctz-border-gray-200">
+    <div className="ctz:flex ctz:flex-wrap ctz:gap-2 ctz:p-3 ctz:border-b ctz:border-gray-200">
       {/* Text formatting */}
       <ToolbarButton
         onClick={() => editor.chain().focus().toggleBold().run()}
         isActive={editor.isActive("bold")}
         title="Bold (Ctrl+B)"
       >
-        <BoldIcon className="ctz-w-4 ctz-h-4" />
+        <BoldIcon className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -99,7 +99,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("italic")}
         title="Italic (Ctrl+I)"
       >
-        <ItalicIcon className="ctz-w-4 ctz-h-4" />
+        <ItalicIcon className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -107,7 +107,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("underline")}
         title="Underline (Ctrl+U)"
       >
-        <UnderlineIcon className="ctz-w-4 ctz-h-4" />
+        <UnderlineIcon className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -115,7 +115,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("strike")}
         title="Strikethrough"
       >
-        <StrikeIcon className="ctz-w-4 ctz-h-4" />
+        <StrikeIcon className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -123,7 +123,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("code")}
         title="Code (Ctrl+`)"
       >
-        <CodeIcon className="ctz-w-4 ctz-h-4" />
+        <CodeIcon className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -131,10 +131,10 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("highlight")}
         title="Highlight"
       >
-        <HighlightIcon className="ctz-w-4 ctz-h-4" />
+        <HighlightIcon className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
-      <div className="ctz-w-px ctz-h-8 ctz-bg-gray-300 ctz-mx-1" />
+      <div className="ctz:w-px ctz:h-8 ctz:bg-gray-300 ctz:mx-1" />
 
       {/* Headings */}
       <ToolbarButton
@@ -142,7 +142,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("heading", { level: 1 })}
         title="Heading 1"
       >
-        <Heading1 className="ctz-w-4 ctz-h-4" />
+        <Heading1 className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -150,7 +150,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("heading", { level: 2 })}
         title="Heading 2"
       >
-        <Heading2 className="ctz-w-4 ctz-h-4" />
+        <Heading2 className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -158,7 +158,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("heading", { level: 3 })}
         title="Heading 3"
       >
-        <Heading3 className="ctz-w-4 ctz-h-4" />
+        <Heading3 className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -166,7 +166,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("heading", { level: 4 })}
         title="Heading 4"
       >
-        <Heading4 className="ctz-w-4 ctz-h-4" />
+        <Heading4 className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -174,7 +174,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("heading", { level: 5 })}
         title="Heading 5"
       >
-        <Heading5 className="ctz-w-4 ctz-h-4" />
+        <Heading5 className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -182,10 +182,10 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("heading", { level: 6 })}
         title="Heading 6"
       >
-        <Heading6 className="ctz-w-4 ctz-h-4" />
+        <Heading6 className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
-      <div className="ctz-w-px ctz-h-8 ctz-bg-gray-300 ctz-mx-1" />
+      <div className="ctz:w-px ctz:h-8 ctz:bg-gray-300 ctz:mx-1" />
 
       {/* Lists and blocks */}
       <ToolbarButton
@@ -193,7 +193,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("bulletList")}
         title="Bullet List"
       >
-        <ListIcon className="ctz-w-4 ctz-h-4" />
+        <ListIcon className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -201,7 +201,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("orderedList")}
         title="Numbered List"
       >
-        <ListOrderedIcon className="ctz-w-4 ctz-h-4" />
+        <ListOrderedIcon className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -209,7 +209,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("taskList")}
         title="Task List"
       >
-        <CheckIcon className="ctz-w-4 ctz-h-4" />
+        <CheckIcon className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -217,7 +217,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("blockquote")}
         title="Blockquote"
       >
-        <QuoteIcon className="ctz-w-4 ctz-h-4" />
+        <QuoteIcon className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -225,10 +225,10 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={false}
         title="Horizontal Rule"
       >
-        <MinusIcon className="ctz-w-4 ctz-h-4" />
+        <MinusIcon className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
-      <div className="ctz-w-px ctz-h-8 ctz-bg-gray-300 ctz-mx-1" />
+      <div className="ctz:w-px ctz:h-8 ctz:bg-gray-300 ctz:mx-1" />
 
       {/* Text alignment */}
       <ToolbarButton
@@ -236,7 +236,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive({ textAlign: "left" })}
         title="Align Left"
       >
-        <AlignLeft className="ctz-w-4 ctz-h-4" />
+        <AlignLeft className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -244,7 +244,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive({ textAlign: "center" })}
         title="Align Center"
       >
-        <AlignCenter className="ctz-w-4 ctz-h-4" />
+        <AlignCenter className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -252,7 +252,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive({ textAlign: "right" })}
         title="Align Right"
       >
-        <AlignRight className="ctz-w-4 ctz-h-4" />
+        <AlignRight className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -260,10 +260,10 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive({ textAlign: "justify" })}
         title="Justify"
       >
-        <AlignJustify className="ctz-w-4 ctz-h-4" />
+        <AlignJustify className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
-      <div className="ctz-w-px ctz-h-8 ctz-bg-gray-300 ctz-mx-1" />
+      <div className="ctz:w-px ctz:h-8 ctz:bg-gray-300 ctz:mx-1" />
 
       {/* Media and links */}
       <ToolbarButton
@@ -276,7 +276,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("link")}
         title="Add Link"
       >
-        <LinkIcon className="ctz-w-4 ctz-h-4" />
+        <LinkIcon className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -289,7 +289,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={false}
         title="Add Image"
       >
-        <ImageIcon className="ctz-w-4 ctz-h-4" />
+        <ImageIcon className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       <ToolbarButton
@@ -303,10 +303,10 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("table")}
         title="Insert Table"
       >
-        <TableIcon className="ctz-w-4 ctz-h-4" />
+        <TableIcon className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
-      <div className="ctz-w-px ctz-h-8 ctz-bg-gray-300 ctz-mx-1" />
+      <div className="ctz:w-px ctz:h-8 ctz:bg-gray-300 ctz:mx-1" />
 
       {/* Code blocks */}
       <ToolbarButton
@@ -314,12 +314,12 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
         isActive={editor.isActive("codeBlock")}
         title="Code Block"
       >
-        <Code2 className="ctz-w-4 ctz-h-4" />
+        <Code2 className="ctz:w-4 ctz:h-4" />
       </ToolbarButton>
 
       {/* Font styling */}
       <select
-        className="ctz-px-2 ctz-py-1 ctz-border ctz-border-gray-300 ctz-rounded ctz-text-sm"
+        className="ctz:px-2 ctz:py-1 ctz:border ctz:border-gray-300 ctz:rounded ctz:text-sm"
         onChange={(e) => {
           const fontFamily = e.target.value;
           if (fontFamily) {
@@ -339,7 +339,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
 
       <input
         type="color"
-        className="ctz-w-8 ctz-h-8 ctz-border ctz-border-gray-300 ctz-rounded ctz-cursor-pointer"
+        className="ctz:w-8 ctz:h-8 ctz:border ctz:border-gray-300 ctz:rounded ctz:cursor-pointer"
         onChange={(e) => {
           editor.chain().focus().setColor(e.target.value).run();
         }}
@@ -348,7 +348,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ editor }) => {
 
       <input
         type="color"
-        className="ctz-w-8 ctz-h-8 ctz-border ctz-border-gray-300 ctz-rounded ctz-cursor-pointer"
+        className="ctz:w-8 ctz:h-8 ctz:border ctz:border-gray-300 ctz:rounded ctz:cursor-pointer"
         onChange={(e) => {
           editor.chain().focus().setHighlight({ color: e.target.value }).run();
         }}

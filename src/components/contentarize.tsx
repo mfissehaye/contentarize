@@ -66,9 +66,9 @@ export default function Contentarize<Fields extends Field[]>({
         <div ref={childrenRef}>{childNodes}</div>
         <div /* style={{ zIndex: countAncestors(childrenRef.current) }} */>
           {isDisabled ? (
-            <div className="ctz-relative ctz-overflow-visible">
+            <div className="ctz:relative ctz:overflow-visible">
               <button
-                className="ctz-absolute ctz-bg-amber-500/10 ctz-cursor-pointer ctz-transition-opacity ctz-child"
+                className="ctz:absolute ctz:bg-amber-500/10 ctz:cursor-pointer ctz:transition-opacity ctz:child"
                 style={{
                   right: 0,
                   top: -(childrenRef.current?.clientHeight || 0),
@@ -78,18 +78,18 @@ export default function Contentarize<Fields extends Field[]>({
                 }
               >
                 {hovered ? (
-                  <div className="ctz-absolute ctz-top-5 ctz-right-3 ctz--translate-x-1/2 ctz-translate-y-1/2 ctz-bg-black [&_*]:text-white! ctz-w-6 ctz-h-6 ctz-rounded-full ctz-grid ctz-place-items-center ctz-border ctz-border-gray-400">
-                    <EyeOffIcon className="ctz-w-4 ctz-h-4" />
+                  <div className="ctz:absolute ctz:top-5 ctz:right-3 ctz:-translate-x-1/2 ctz:translate-y-1/2 ctz:bg-black [&_*]:text-white! ctz:w-6 ctz:h-6 ctz:rounded-full ctz:grid ctz:place-items-center ctz:border ctz:border-gray-400">
+                    <EyeOffIcon className="ctz:w-4 ctz:h-4" />
                   </div>
                 ) : null}
               </button>
             </div>
           ) : (
-            <div className="ctz-relative ctz-overflow-visible">
+            <div className="ctz:relative ctz:overflow-visible">
               <button
                 onClick={() => setEditing({ id, inputs })}
                 className={classNames(
-                  "ctz-absolute ctz-bg-amber-500/10 ctz-border ctz-border-amber-300/40! ctz-cursor-pointer ctz-transition-opacity ctz-child ctz-z-20",
+                  "ctz:absolute ctz:bg-amber-500/10 ctz:border ctz:border-amber-300/40! ctz:cursor-pointer ctz:transition-opacity ctz:child ctz:z-20",
                   {
                     "opacity-100": hovered,
                     "opacity-0": !hovered,
@@ -102,9 +102,9 @@ export default function Contentarize<Fields extends Field[]>({
                   height: childrenRef.current?.clientHeight,
                 }}
               >
-                <div className="ctz-w-6 ctz-h-6 ctz-bg-white ctz-rounded-full ctz-grid ctz-place-items-center [&_*]:text-black! ctz-absolute ctz-top-5 ctz-right-3 ctz--translate-x-1/2 ctz-translate-y-1/2 ctz-border ctz-border-gray-400">
+                <div className="ctz:w-6 ctz:h-6 ctz:bg-white ctz:rounded-full ctz:grid ctz:place-items-center [&_*]:text-black! ctz:absolute ctz:top-5 ctz:right-3 ctz:-translate-x-1/2 ctz:translate-y-1/2 ctz:border ctz:border-gray-400">
                   <EyeIcon
-                    className="ctz-w-4 ctz-h-4"
+                    className="ctz:w-4 ctz:h-4"
                     onClick={(e) => {
                       e.stopPropagation();
                       setDisabledItems([...disabledItems, id]);

@@ -18,12 +18,12 @@ const RichTextEditorDemo: React.FC = () => {
   };
 
   return (
-    <div className="ctz-max-w-4xl ctz-mx-auto ctz-p-6">
-      <h1 className="ctz-text-3xl ctz-font-bold ctz-mb-6">
+    <div className="ctz:max-w-4xl ctz:mx-auto ctz:p-6">
+      <h1 className="ctz:text-3xl ctz:font-bold ctz:mb-6">
         TipTap Rich Text Editor Demo
       </h1>
 
-      <div className="ctz-mb-6">
+      <div className="ctz:mb-6">
         <RichTextEditor
           value={content}
           onChange={setContent}
@@ -31,26 +31,26 @@ const RichTextEditorDemo: React.FC = () => {
         />
       </div>
 
-      <div className="ctz-flex ctz-gap-4 ctz-mb-6">
+      <div className="ctz:flex ctz:gap-4 ctz:mb-6">
         <button
           onClick={handleSave}
-          className="ctz-px-4 ctz-py-2 ctz-bg-blue-500 ctz-text-white ctz-rounded ctz-hover:bg-blue-600"
+          className="ctz:px-4 ctz:py-2 ctz:bg-blue-500 ctz:text-white ctz:rounded ctz:hover:bg-blue-600"
         >
           Save Content
         </button>
         <button
           onClick={handleLoad}
-          className="ctz-px-4 ctz-py-2 ctz-bg-green-500 ctz-text-white ctz-rounded ctz-hover:bg-green-600"
+          className="ctz:px-4 ctz:py-2 ctz:bg-green-500 ctz:text-white ctz:rounded ctz:hover:bg-green-600"
         >
           Load Content
         </button>
       </div>
 
-      <div className="ctz-bg-gray-100 ctz-p-4 ctz-rounded">
-        <h3 className="ctz-font-semibold ctz-mb-2">
+      <div className="ctz:bg-gray-100 ctz:p-4 ctz:rounded">
+        <h3 className="ctz:font-semibold ctz:mb-2">
           Current Content (HTML Format):
         </h3>
-        <pre className="ctz-text-sm ctz-overflow-auto">{content}</pre>
+        <pre className="ctz:text-sm ctz:overflow-auto">{content}</pre>
       </div>
     </div>
   );
