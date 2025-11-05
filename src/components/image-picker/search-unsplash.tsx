@@ -36,8 +36,8 @@ export default function SearchImageAndVideo({
   }, [source, onSubmit]);
 
   return (
-    <div className="ctz:flex gap-x-3">
-      <div className="relative grow">
+    <div className="ctz-flex ctz-gap-x-3">
+      <div className="ctz-relative ctz-grow">
         <input
           type="text"
           {...register("search")}
@@ -48,22 +48,22 @@ export default function SearchImageAndVideo({
             }
           }}
           placeholder="Or search the web ..."
-          className="ctz:w-full ctz:p-3 border ctz:rounded-md focus:ring-0 ctz:focus:outline-none"
+          className="ctz-w-full ctz-p-3 ctz-border ctz-rounded-md ctz-focus:ring-0 ctz-focus:outline-none"
         />
         <button
           onClick={(e) => {
             e.preventDefault();
             onSubmit();
           }}
-          className="absolute ctz:top-1/2 ctz:-translate-y-1/2 ctz:right-3 ctz:inline-block"
+          className="ctz-absolute ctz-top-1/2 ctz--translate-y-1/2 ctz-right-3 ctz-inline-block"
         >
           <SearchIcon />
         </button>
       </div>
-      <div className="ctz:bg-primary/10 ctz:px-3 rounded ctz:flex ctz:items-center">
+      <div className="ctz-bg-primary/10 ctz-px-3 ctz-rounded ctz-flex ctz-items-center">
         <select
           {...register("source", { required: true })}
-          className="ctz:bg-transparent ctz:border-none outline-none ctz:h-full"
+          className="ctz-bg-transparent ctz-border-none ctz-outline-none ctz-h-full"
         >
           {!isVideo && (
             <>

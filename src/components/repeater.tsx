@@ -50,24 +50,24 @@ export default function Repeater<Fields extends Field[]>({
         }}
         onKeyDown={() => {}}
         role="button"
-        className="relative ctz:max-w-full ctz:overflow-hidden min-w-10"
+        className="ctz-relative ctz-max-w-full ctz-overflow-hidden ctz-min-w-10"
       >
         {items.length ? (
-          <div className="ctz:opacity-20 relative pointer-events-none ctz:pl-5 ctz:cursor-pointer">
+          <div className="ctz-opacity-20 ctz-relative ctz-pointer-events-none ctz-pl-5 ctz-cursor-pointer">
             {children(items[items.length - 1], items.length - 1)}
           </div>
         ) : (
-          <button className="ctz:pl-12">Add an Item</button>
+          <button className="ctz-pl-12">Add an Item</button>
         )}
-        {/* <div className="absolute ctz:inset-0 rounded ctz:flex ctz:items-end justify-center ctz:min-w-fit">
-          <div className="ctz:font-medium ctz:flex ctz:items-center ctz:space-x-2 whitespace-nowrap border ctz:text-gray-500 hover:bg-gray-100 ctz:w-full ctz:justify-center ctz:p-3 rounded ctz:transition-colors ctz:bg-gray-50">
-            <PlusIcon className="ctz:w-5 h-5" />
-            <span>Add {_startCase(id)}</span>
-          </div>
-        </div> */}
+        {/* <div className="absolute ctz-inset-0 ctz-rounded ctz-flex ctz-items-end ctz-justify-center ctz-min-w-fit">
+            <div className="ctz-font-medium ctz-flex ctz-items-center ctz-space-x-2 ctz-whitespace-nowrap ctz-border ctz-text-gray-500 ctz-hover:bg-gray-100 ctz-w-full ctz-justify-center ctz-p-3 ctz-rounded ctz-transition-colors ctz-bg-gray-50">
+              <PlusIcon className="ctz-w-5 ctz-h-5" />
+              <span>Add {_startCase(id)}</span>
+            </div>
+          </div> */}
 
-        <button className="ctz:border-2 ctz:border-black rounded-full absolute ctz:top-1/2 ctz:-translate-y-1/2 ctz:left-3 ctz:w-6 h-6 ctz:grid ctz:place-items-center ctz:bg-white [&_*]:text-black!">
-          <BsPlus className="ctz:w-5 h-5 ctz:text-black" />
+        <button className="ctz-border-2 ctz-border-black ctz-rounded-full ctz-absolute ctz-top-1/2 ctz--translate-y-1/2 ctz-left-3 ctz-w-6 ctz-h-6 ctz-grid ctz-place-items-center ctz-bg-white ctz-[&_*]:text-black!">
+          <BsPlus className="ctz-w-5 ctz-h-5 ctz-text-black" />
         </button>
       </div>
     </>

@@ -30,47 +30,101 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
     defaultValues: {
       title: document.title || "",
       description:
-        (document.querySelector('meta[name="description"]') as HTMLMetaElement | null)?.content || "",
+        (
+          document.querySelector(
+            'meta[name="description"]'
+          ) as HTMLMetaElement | null
+        )?.content || "",
       keywords:
-        (document.querySelector('meta[name="keywords"]') as HTMLMetaElement | null)?.content || "",
+        (
+          document.querySelector(
+            'meta[name="keywords"]'
+          ) as HTMLMetaElement | null
+        )?.content || "",
       canonicalUrl:
-        (document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null)?.href ||
-        window.location.href,
+        (
+          document.querySelector(
+            'link[rel="canonical"]'
+          ) as HTMLLinkElement | null
+        )?.href || window.location.href,
       robots:
-        (document.querySelector('meta[name="robots"]') as HTMLMetaElement | null)?.content ||
-        "index, follow",
+        (
+          document.querySelector(
+            'meta[name="robots"]'
+          ) as HTMLMetaElement | null
+        )?.content || "index, follow",
       "og:title":
-        (document.querySelector('meta[property="og:title"]') as HTMLMetaElement | null)?.content || "",
+        (
+          document.querySelector(
+            'meta[property="og:title"]'
+          ) as HTMLMetaElement | null
+        )?.content || "",
       "og:description":
-        (document.querySelector('meta[property="og:description"]') as HTMLMetaElement | null)?.content || "",
+        (
+          document.querySelector(
+            'meta[property="og:description"]'
+          ) as HTMLMetaElement | null
+        )?.content || "",
       "og:image":
-        (document.querySelector('meta[property="og:image"]') as HTMLMetaElement | null)?.content || "",
+        (
+          document.querySelector(
+            'meta[property="og:image"]'
+          ) as HTMLMetaElement | null
+        )?.content || "",
       "og:url":
-        (document.querySelector('meta[property="og:url"]') as HTMLMetaElement | null)?.content ||
-        window.location.href,
+        (
+          document.querySelector(
+            'meta[property="og:url"]'
+          ) as HTMLMetaElement | null
+        )?.content || window.location.href,
       "og:type":
-        (document.querySelector('meta[property="og:type"]') as HTMLMetaElement | null)?.content ||
-        "website",
+        (
+          document.querySelector(
+            'meta[property="og:type"]'
+          ) as HTMLMetaElement | null
+        )?.content || "website",
       "og:site_name":
-        (document.querySelector('meta[property="og:site_name"]') as HTMLMetaElement | null)?.content || "",
+        (
+          document.querySelector(
+            'meta[property="og:site_name"]'
+          ) as HTMLMetaElement | null
+        )?.content || "",
       "twitter:card":
-        (document.querySelector('meta[name="twitter:card"]') as HTMLMetaElement | null)?.content ||
-        "summary_large_image",
+        (
+          document.querySelector(
+            'meta[name="twitter:card"]'
+          ) as HTMLMetaElement | null
+        )?.content || "summary_large_image",
       "twitter:title":
-        (document.querySelector('meta[name="twitter:title"]') as HTMLMetaElement | null)?.content || "",
+        (
+          document.querySelector(
+            'meta[name="twitter:title"]'
+          ) as HTMLMetaElement | null
+        )?.content || "",
       "twitter:description":
-        (document.querySelector('meta[name="twitter:description"]') as HTMLMetaElement | null)?.content || "",
+        (
+          document.querySelector(
+            'meta[name="twitter:description"]'
+          ) as HTMLMetaElement | null
+        )?.content || "",
       "twitter:image":
-        (document.querySelector('meta[name="twitter:image"]') as HTMLMetaElement | null)?.content || "",
+        (
+          document.querySelector(
+            'meta[name="twitter:image"]'
+          ) as HTMLMetaElement | null
+        )?.content || "",
       themeColor:
-        (document.querySelector('meta[name="theme-color"]') as HTMLMetaElement | null)?.content ||
-        "#ffffff",
+        (
+          document.querySelector(
+            'meta[name="theme-color"]'
+          ) as HTMLMetaElement | null
+        )?.content || "#ffffff",
     },
   });
 
   // Handle form submit - save into special key __seo inside pageData
   const onSubmit = (data: MetaContentFormData) => {
-    pageData.__seo = (data as unknown) as Record<string, string>;
+    pageData.__seo = data as unknown as Record<string, string>;
     setPageData(structuredClone(pageData));
     onClose();
   };
@@ -78,74 +132,76 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
   return (
     <div>
       {/* Header */}
-      <div className="ctz:p-5 ctz:bg-gray-100 ctz:flex ctz:justify-between items-center sticky ctz:top-0">
-        <h1 className="ctz:font-semibold">SEO &amp; Metadata Settings</h1>
-        <button type="button" onClick={onClose} className="ctz:md:hidden">
-          <XIcon className="ctz:w-5 h-5" />
+      <div className="ctz-p-5 ctz-bg-gray-100 ctz-flex ctz-justify-between ctz-items-center ctz-sticky ctz-top-0">
+        <h1 className="ctz-font-semibold">SEO &amp; Metadata Settings</h1>
+        <button type="button" onClick={onClose} className="ctz-md:hidden">
+          <XIcon className="ctz-w-5 ctz-h-5" />
         </button>
       </div>
 
       {/* Form */}
-      <form onSubmit={handleSubmit(onSubmit)} className="ctz:space-y-6">
+      <form onSubmit={handleSubmit(onSubmit)} className="ctz-space-y-6">
         {/* ===========================
             BASIC SEO FIELDS
         ============================ */}
-        <section className="space-y-3 ctz:p-5">
-          <h2 className="ctz:font-semibold text-lg ctz:mb-3">Basic Metadata</h2>
-          <div className="space-y-2">
-            <label htmlFor="title" className="ctz:font-medium">
+        <section className="ctz-space-y-3 ctz-p-5">
+          <h2 className="ctz-font-semibold ctz-text-lg ctz-mb-3">
+            Basic Metadata
+          </h2>
+          <div className="ctz-space-y-2">
+            <label htmlFor="title" className="ctz-font-medium">
               Title
             </label>
             <input
               id="title"
               {...register("title")}
               type="text"
-              className="ctz:p-3 ctz:w-full border rounded ctz:focus:outline-none"
+              className="ctz-p-3 ctz-w-full ctz-border ctz-rounded ctz-focus:outline-none"
             />
           </div>
 
-          <div className="ctz:space-y-2 mt-3">
-            <label htmlFor="description" className="ctz:font-medium">
+          <div className="ctz-space-y-2 ctz-mt-3">
+            <label htmlFor="description" className="ctz-font-medium">
               Description
             </label>
             <textarea
               id="description"
               {...register("description")}
-              className="ctz:p-3 ctz:w-full border rounded ctz:focus:outline-none"
+              className="ctz-p-3 ctz-w-full ctz-border ctz-rounded ctz-focus:outline-none"
             ></textarea>
           </div>
 
-          <div className="ctz:space-y-2 mt-3">
-            <label htmlFor="keywords" className="ctz:font-medium">
+          <div className="ctz-space-y-2 ctz-mt-3">
+            <label htmlFor="keywords" className="ctz-font-medium">
               Keywords
             </label>
             <textarea
               id="keywords"
               {...register("keywords")}
-              className="ctz:p-3 ctz:w-full border rounded ctz:focus:outline-none"
+              className="ctz-p-3 ctz-w-full ctz-border ctz-rounded ctz-focus:outline-none"
             ></textarea>
           </div>
 
-          <div className="ctz:space-y-2 mt-3">
-            <label htmlFor="canonicalUrl" className="ctz:font-medium">
+          <div className="ctz-space-y-2 ctz-mt-3">
+            <label htmlFor="canonicalUrl" className="ctz-font-medium">
               Canonical URL
             </label>
             <input
               id="canonicalUrl"
               {...register("canonicalUrl")}
               type="text"
-              className="ctz:p-3 ctz:w-full border rounded ctz:focus:outline-none"
+              className="ctz-p-3 ctz-w-full ctz-border ctz-rounded ctz-focus:outline-none"
             />
           </div>
 
-          <div className="ctz:space-y-2 mt-3">
-            <label htmlFor="robots" className="ctz:font-medium">
+          <div className="ctz-space-y-2 ctz-mt-3">
+            <label htmlFor="robots" className="ctz-font-medium">
               Robots
             </label>
             <select
               id="robots"
               {...register("robots")}
-              className="ctz:p-3 ctz:w-full border rounded ctz:focus:outline-none"
+              className="ctz-p-3 ctz-w-full ctz-border ctz-rounded ctz-focus:outline-none"
             >
               <option value="index, follow">index, follow</option>
               <option value="noindex, follow">noindex, follow</option>
@@ -158,8 +214,8 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
         {/* ===========================
             OPEN GRAPH
         ============================ */}
-        <section className="ctz:space-y-3 p-5">
-          <h2 className="ctz:font-semibold text-lg ctz:mt-8 mb-3">
+        <section className="ctz-space-y-3 ctz-p-5">
+          <h2 className="ctz-font-semibold ctz-text-lg ctz-mt-8 ctz-mb-3">
             Open Graph (Facebook, LinkedIn)
           </h2>
 
@@ -171,15 +227,15 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
             ["og:type", "OG Type"],
             ["og:site_name", "OG Site Name"],
           ].map(([id, label]) => (
-            <div className="ctz:space-y-2" key={id}>
-              <label htmlFor={id} className="ctz:font-medium">
+            <div className="ctz-space-y-2" key={id}>
+              <label htmlFor={id} className="ctz-font-medium">
                 {label}
               </label>
               <input
                 id={id}
                 {...register(id as keyof MetaContentFormData)}
                 type="text"
-                className="ctz:p-3 ctz:w-full border rounded ctz:focus:outline-none"
+                className="ctz-p-3 ctz-w-full ctz-border ctz-rounded ctz-focus:outline-none"
               />
             </div>
           ))}
@@ -188,19 +244,19 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
         {/* ===========================
             TWITTER CARD
         ============================ */}
-        <section className="ctz:space-y-3 p-5">
-          <h2 className="ctz:font-semibold text-lg ctz:mt-8 mb-3">
+        <section className="ctz-space-y-3 ctz-p-5">
+          <h2 className="ctz-font-semibold ctz-text-lg ctz-mt-8 ctz-mb-3">
             Twitter Card Metadata
           </h2>
 
-          <div className="ctz:space-y-2">
-            <label htmlFor="twitter:card" className="ctz:font-medium">
+          <div className="ctz-space-y-2">
+            <label htmlFor="twitter:card" className="ctz-font-medium">
               Card Type
             </label>
             <select
               id="twitter:card"
               {...register("twitter:card")}
-              className="ctz:p-3 ctz:w-full border rounded ctz:focus:outline-none"
+              className="ctz-p-3 ctz-w-full ctz-border ctz-rounded ctz-focus:outline-none"
             >
               <option value="summary">summary</option>
               <option value="summary_large_image">summary_large_image</option>
@@ -212,15 +268,15 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
             ["twitter:description", "Twitter Description"],
             ["twitter:image", "Twitter Image URL"],
           ].map(([id, label]) => (
-            <div className="ctz:space-y-2" key={id}>
-              <label htmlFor={id} className="ctz:font-medium">
+            <div className="ctz-space-y-2" key={id}>
+              <label htmlFor={id} className="ctz-font-medium">
                 {label}
               </label>
               <input
                 id={id}
                 {...register(id as keyof MetaContentFormData)}
                 type="text"
-                className="ctz:p-3 ctz:w-full border rounded ctz:focus:outline-none"
+                className="ctz-p-3 ctz-w-full ctz-border ctz-rounded ctz-focus:outline-none"
               />
             </div>
           ))}
@@ -229,31 +285,35 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
         {/* ===========================
             ADVANCED OPTIONS
         ============================ */}
-        <section className="ctz:space-y-3 p-5">
-          <h2 className="ctz:font-semibold text-lg ctz:mt-8 mb-3">Advanced Options</h2>
-          <div className="ctz:space-y-2">
-            <label htmlFor="themeColor" className="ctz:font-medium">
+        <section className="ctz-space-y-3 ctz-p-5">
+          <h2 className="ctz-font-semibold ctz-text-lg ctz-mt-8 ctz-mb-3">
+            Advanced Options
+          </h2>
+          <div className="ctz-space-y-2">
+            <label htmlFor="themeColor" className="ctz-font-medium">
               Theme Color
             </label>
             <input
               id="themeColor"
               {...register("themeColor")}
               type="color"
-              className="ctz:h-10 w-16 border rounded ctz:cursor-pointer"
+              className="ctz-h-10 ctz-w-16 ctz-border ctz-rounded ctz-cursor-pointer"
             />
           </div>
         </section>
 
-        <section className="ctz:mt-10 space-y-3 ctz:p-5">
-          <h2 className="ctz:font-semibold text-lg ctz:mb-3">Google Search Preview</h2>
-          <div className="ctz:rounded-md ctz:p-4 ctz:bg-white border ctz:border-gray-100">
-            <p className="text-[#202124] ctz:text-lg font-medium ctz:leading-snug">
+        <section className="ctz-mt-10 ctz-space-y-3 ctz-p-5">
+          <h2 className="ctz-font-semibold ctz-text-lg ctz-mb-3">
+            Google Search Preview
+          </h2>
+          <div className="ctz-rounded-md ctz-p-4 ctz-bg-white ctz-border ctz-border-gray-100">
+            <p className="ctz-text-[#202124] ctz-text-lg ctz-font-medium ctz-leading-snug">
               {watch("title") || "Example Page Title - KBK Tech"}
             </p>
-            <p className="text-[#202124] ctz:text-sm ctz:text-green-700">
+            <p className="ctz-text-[#202124] ctz-text-sm ctz-text-green-700">
               {watch("canonicalUrl") || "https://kbk-tech.com/example-page"}
             </p>
-            <p className="text-[#4d5156] ctz:text-sm ctz:mt-1">
+            <p className="ctz-text-[#4d5156] ctz-text-sm ctz-mt-1">
               {watch("description") ||
                 "This is a short description that might appear in Google search results."}
             </p>
@@ -263,10 +323,10 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
         {/* ===========================
             SUBMIT BUTTON
         ============================ */}
-        <div className="sticky ctz:bottom-0 ctz:p-5 ctz:bg-gray-50 border-t ctz:border-gray-200">
+        <div className="ctz-sticky ctz-bottom-0 ctz-p-5 ctz-bg-gray-50 ctz-border-t ctz-border-gray-200">
           <button
             type="submit"
-            className="btn ctz:w-full ctz:block ctz:p-3 ctz:rounded-full"
+            className="ctz-btn ctz-w-full ctz-block ctz-p-3 ctz-rounded-full"
           >
             Save SEO Settings
           </button>
