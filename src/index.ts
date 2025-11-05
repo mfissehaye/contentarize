@@ -1,4 +1,5 @@
 // Import CSS to ensure styles are bundled
+// This import is a side effect and should be processed by bundlers
 import "./tailwind.css";
 
 export { CMSProvider, type CMSProviderProps, CMSContext } from "./cms-provider";

@@ -10,7 +10,7 @@ export default function Tabs<T extends string = "Public" | "Upload">({
   onSelectTab: (tab: T) => void;
 }) {
   return (
-    <div className="flex">
+    <div className="ctz:flex">
       {labels.map((_, i) => (
         <button
           type="button"

@@ -66,9 +66,9 @@ export default function Contentarize<Fields extends Field[]>({
         <div ref={childrenRef}>{childNodes}</div>
         <div /* style={{ zIndex: countAncestors(childrenRef.current) }} */>
           {isDisabled ? (
-            <div className="relative overflow-visible">
+            <div className="relative ctz:overflow-visible">
               <button
-                className="absolute bg-amber-500/10 cursor-pointer transition-opacity child"
+                className="absolute ctz:bg-amber-500/10 ctz:cursor-pointer ctz:transition-opacity child"
                 style={{
                   right: 0,
                   top: -(childrenRef.current?.clientHeight || 0),
@@ -78,14 +78,14 @@ export default function Contentarize<Fields extends Field[]>({
                 }
               >
                 {hovered ? (
-                  <div className="absolute top-5 right-3 -translate-x-1/2 -translate-y-1/2 bg-black [&_*]:text-white! w-6 h-6 rounded-full grid place-items-center border border-gray-400">
-                    <EyeOffIcon className="w-4 h-4" />
+                  <div className="absolute ctz:top-5 right-3 ctz:-translate-x-1/2 -translate-y-1/2 ctz:bg-black [&_*]:text-white! ctz:w-6 h-6 ctz:rounded-full ctz:grid ctz:place-items-center border ctz:border-gray-400">
+                    <EyeOffIcon className="ctz:w-4 h-4" />
                   </div>
                 ) : null}
               </button>
             </div>
           ) : (
-            <div className="relative overflow-visible">
+            <div className="relative ctz:overflow-visible">
               <button
                 onClick={() => setEditing({ id, inputs })}
                 className={classNames(
@@ -102,9 +102,9 @@ export default function Contentarize<Fields extends Field[]>({
                   height: childrenRef.current?.clientHeight,
                 }}
               >
-                <div className="w-6 h-6 bg-white rounded-full grid place-items-center [&_*]:text-black! absolute top-5 right-3 -translate-x-1/2 -translate-y-1/2 border border-gray-400">
+                <div className="ctz:w-6 h-6 ctz:bg-white ctz:rounded-full ctz:grid ctz:place-items-center [&_*]:text-black! absolute ctz:top-5 right-3 ctz:-translate-x-1/2 -translate-y-1/2 border ctz:border-gray-400">
                   <EyeIcon
-                    className="w-4 h-4"
+                    className="ctz:w-4 h-4"
                     onClick={(e) => {
                       e.stopPropagation();
                       setDisabledItems([...disabledItems, id]);

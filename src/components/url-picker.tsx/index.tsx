@@ -58,7 +58,7 @@ export default function URLPickerRef({
           }}
           onFocus={() => setShowDropdown(true)}
           // onBlur={() => setTimeout(() => setShowDropdown(false), 100)}
-          className="p-3 w-full border rounded focus:ring-0 focus:outline-none"
+          className="ctz:p-3 ctz:w-full border rounded ctz:focus:ring-0 focus:outline-none"
         />
 
         <div
@@ -72,7 +72,7 @@ export default function URLPickerRef({
           )} /* dark:bg-gray-700 */
         >
           <ul
-            className="py-2 text-sm text-gray-700" /* dark:text-gray-200 */
+            className="ctz:py-2 ctz:text-sm ctz:text-gray-700" /* dark:text-gray-200 */
             aria-labelledby="dropdownHoverButton"
           >
             {pages.map((page, i) => (
@@ -85,7 +85,7 @@ export default function URLPickerRef({
                     setSearch(page.path);
                     onSetURL(page.path);
                   }}
-                  className="block w-full text-start px-4 py-2 hover:bg-gray-100" /*  dark:hover:bg-gray-600 dark:hover:text-white */
+                  className="ctz:block ctz:w-full text-start ctz:px-4 py-2 ctz:hover:bg-gray-100" /*  dark:hover:bg-gray-600 dark:hover:text-white */
                 >
                   {page.title}
                 </button>
@@ -99,7 +99,7 @@ export default function URLPickerRef({
                     setShowDropdown(false);
                     onSetURL(debouncedSearchTerm);
                   }}
-                  className="block w-full text-start px-4 py-2 hover:bg-gray-100"
+                  className="ctz:block ctz:w-full text-start ctz:px-4 py-2 ctz:hover:bg-gray-100"
                 >
                   Create {debouncedSearchTerm}
                 </button>

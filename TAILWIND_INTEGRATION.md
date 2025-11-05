@@ -49,6 +49,54 @@ export default {
 
 ## Troubleshooting
 
+### ESLint Error: Unable to resolve path to module
+
+If you get an ESLint error like:
+```
+Unable to resolve path to module '@mfissehaye/contentarize/styles.css'.eslintimport/no-unresolved
+```
+
+This is because ESLint doesn't understand CSS imports by default. Fix it by:
+
+**Option 1: Configure ESLint to ignore CSS imports** (Recommended)
+
+Add this to your `.eslintrc` or ESLint config:
+
+```js
+{
+  "rules": {
+    "import/no-unresolved": ["error", {
+      "ignore": ["\\.css$"]
+    }]
+  }
+}
+```
+
+**Option 2: Disable the rule for CSS imports**
+
+Add this comment above the import:
+
+```tsx
+// eslint-disable-next-line import/no-unresolved
+import '@mfissehaye/contentarize/styles.css';
+```
+
+**Option 3: Configure ESLint resolver**
+
+If using `eslint-import-resolver-typescript` or similar, configure it to handle CSS:
+
+```js
+{
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".css"]
+      }
+    }
+  }
+}
+```
+
 ### Classes not appearing
 
 1. **Make sure you're importing the CSS**: 

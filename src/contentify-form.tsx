@@ -117,12 +117,12 @@ export default function ContentifyForm({ onClose }: { onClose: () => void }) {
 
   return (
     <div>
-      <div className="p-5 bg-gray-100 flex justify-between items-center sticky top-0">
-        <h1 className="font-semibold">
+      <div className="ctz:p-5 bg-gray-100 ctz:flex ctz:justify-between items-center sticky ctz:top-0">
+        <h1 className="ctz:font-semibold">
           {isCreatingNew ? "Add" : "Edit"}{" "}
           {_startCase(editing.id.replace(/\.-?\d+$/, ""))}
         </h1>
-        <button type="button" onClick={onClose} className="md:hidden">
+        <button type="button" onClick={onClose} className="ctz:md:hidden">
           <strong className="text-3xl">
             <XIcon />
           </strong>
@@ -133,18 +133,18 @@ export default function ContentifyForm({ onClose }: { onClose: () => void }) {
               if (confirm("Are you sure you want to delete this item?"))
                 onRemove();
             }}
-            className="text-red-500"
+            className="ctz:text-red-500"
           >
-            <Trash2 className="w-5 h-5" />
+            <Trash2 className="ctz:w-5 h-5" />
           </button>
         )}
       </div>
-      <form onSubmit={handleSubmit(onSubmit)} className="p-5 space-y-5 pb-44">
+      <form onSubmit={handleSubmit(onSubmit)} className="ctz:p-5 space-y-5 ctz:pb-44">
         {editing.inputs.map((input) => {
           const id = _snakeCase(input?.label);
           return ["image", "video"].includes(input.type) ? (
             <div className="space-y-1" key={input.id}>
-              <label className="font-medium">{input?.label}</label>
+              <label className="ctz:font-medium">{input?.label}</label>
               <ImagePicker
                 isVideo={input.type === "video"}
                 value={String(watch(input.id) || "")}
@@ -172,7 +172,7 @@ export default function ContentifyForm({ onClose }: { onClose: () => void }) {
               onChangeOpenInNewTab={() => {}}
             />
           ) : input.type === "rich-text" ? (
-            <div className="space-y-1" key={input.id}>
+            <div className="ctz:space-y-1" key={input.id}>
               <label className="font-medium">{input?.label}</label>
               <RichTextEditor
                 value={watch(input.id) || ""}
@@ -182,59 +182,59 @@ export default function ContentifyForm({ onClose }: { onClose: () => void }) {
               />
             </div>
           ) : (
-            <div className="space-y-1" key={input.id}>
-              <label htmlFor={id} className="font-medium">
+            <div className="ctz:space-y-1" key={input.id}>
+              <label htmlFor={id} className="ctz:font-medium">
                 {input?.label}
               </label>
               <input
                 type="text"
                 id={id}
                 placeholder={input?.label}
-                className="p-3 w-full border rounded focus:ring-0 focus:outline-none"
+                className="ctz:p-3 ctz:w-full border rounded ctz:focus:ring-0 focus:outline-none"
                 {...register(input.id)}
               />
             </div>
           );
         })}
-        <div className="fixed inset-x-0 max-w-[450px] bottom-0 ml-auto p-3 bg-gray-50 border-t border-gray-200 space-y-3">
+        <div className="fixed inset-x-0 ctz:max-w-[450px] ctz:bottom-0 ctz:ml-auto p-3 ctz:bg-gray-50 border-t ctz:border-gray-200 ctz:space-y-3">
           {!isCreatingNew && /\.\d+$/.test(editing.id) && (
-            <div className="flex justify-between items-center">
-              <div className="space-x-2">
+            <div className="ctz:flex ctz:justify-between items-center">
+              <div className="ctz:space-x-2">
                 <button
                   className="p-2.5 rounded btn"
                   title="Move item first"
                   onClick={moveToFirst}
                 >
-                  <ChevronsLeft className="w-5 h-5" />
+                  <ChevronsLeft className="ctz:w-5 h-5" />
                 </button>
                 <button
-                  className="p-2.5 rounded btn"
+                  className="ctz:p-2.5 rounded btn"
                   title="Move item up"
                   onClick={moveUp}
                 >
-                  <ChevronLeft className="w-5 h-5" />
+                  <ChevronLeft className="ctz:w-5 h-5" />
                 </button>
               </div>
-              <div className="space-x-2">
+              <div className="ctz:space-x-2">
                 <button
                   className="p-2.5 rounded btn"
                   title="Move item down"
                   onClick={moveDown}
                 >
-                  <ChevronRight className="w-5 h-5" />
+                  <ChevronRight className="ctz:w-5 h-5" />
                 </button>
                 <button
-                  className="p-2.5 rounded btn"
+                  className="ctz:p-2.5 rounded btn"
                   title="Move item last"
                   onClick={moveToEnd}
                 >
-                  <ChevronsRight className="w-5 h-5" />
+                  <ChevronsRight className="ctz:w-5 h-5" />
                 </button>
               </div>
             </div>
           )}
 
-          <button type="submit" className="btn w-full block p-3 rounded-full">
+          <button type="submit" className="btn ctz:w-full ctz:block ctz:p-3 ctz:rounded-full">
             Save
           </button>
         </div>

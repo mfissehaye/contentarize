@@ -107,7 +107,7 @@ export function CMSProvider({
         )}
         onClick={() => setScreenSize(size)}
       >
-        <Icon className="w-5 h-5" />
+        <Icon className="ctz:w-5 h-5" />
       </button>
     );
   };
@@ -132,11 +132,12 @@ export function CMSProvider({
         onPageSearch,
       }}
     >
+      <div className="contentarize-cms-wrapper">
       {!user ? (
         <>
           {children}
           <button
-            className="bg-amber-600 text-white fixed bottom-10 right-10 w-14 h-14 rounded-full flex items-center justify-center"
+            className="ctz:bg-amber-600 text-white fixed ctz:bottom-10 right-10 ctz:w-14 h-14 ctz:rounded-full ctz:flex ctz:items-center justify-center"
             onClick={onSignin}
           >
             <SigninIcon />
@@ -150,20 +151,20 @@ export function CMSProvider({
               "py-3 sticky top-0 z-50 font-semibold max-w-full overflow-hidden"
             )}
           >
-            <div className="container flex flex-col lg:flex-row items-center justify-between space-y-3 lg:space-y-0 lg:space-x-3">
+            <div className="container ctz:flex flex-col ctz:lg:flex-row ctz:items-center justify-between ctz:space-y-3 lg:space-y-0 ctz:lg:space-x-3">
               {editMode ? (
                 <>
                   <div>
                     <button
                       onClick={() => setShowMetaContentForm(true)}
-                      className="p-2 rounded-md transition-colors flex items-center gap-x-2 bg-black text-white px-3 font-normal! tracking-wide"
+                      className="p-2 ctz:rounded-md ctz:transition-colors ctz:flex ctz:items-center gap-x-2 ctz:bg-black text-white ctz:px-3 ctz:font-normal! tracking-wide"
                     >
-                      <SearchCode className="w-5 h-5" />
+                      <SearchCode className="ctz:w-5 h-5" />
                       <span>Meta &amp; SEO</span>
                     </button>
                   </div>
 
-                  <div className="text-black flex items-center gap-x-5">
+                  <div className="ctz:text-black ctz:flex ctz:items-center gap-x-5">
                     <ScreensizeButton Icon={Ellipsis} size="default" />
                     <ScreensizeButton Icon={BsPhone} size="phone" />
                     <ScreensizeButton Icon={BsTablet} size="tablet" />
@@ -173,7 +174,7 @@ export function CMSProvider({
               ) : (
                 <>&nbsp;</>
               )}
-              <div className="flex items-center gap-x-5">
+              <div className="ctz:flex ctz:items-center gap-x-5">
                 <button
                   onClick={() => {
                     if (isInEditMode && touched) {
@@ -189,19 +190,19 @@ export function CMSProvider({
                     setEditMode(!editMode);
                     setScreenSize("default");
                   }}
-                  className="border rounded-md py-2 px-3 border-gray-300/50 bg-black text-white transition-colors disabled:bg-transparent disabled:border-none inline-flex items-center space-x-3 font-normal! tracking-wide"
+                  className="border ctz:rounded-md ctz:py-2 px-3 ctz:border-gray-300/50 bg-black ctz:text-white ctz:transition-colors ctz:disabled:bg-transparent ctz:disabled:border-none ctz:inline-flex ctz:items-center ctz:space-x-3 ctz:font-normal! tracking-wide"
                 >
                   <span>
                     {isInEditMode ? "Exit Editing Mode" : "Enter Editing Mode"}
                   </span>
-                  {isInEditMode && <XIcon className="w-5 h-5" />}
+                  {isInEditMode && <XIcon className="ctz:w-5 h-5" />}
                 </button>
 
                 {touched && (
                   <>
                     <button
                       disabled={!!publishing}
-                      className="px-5 py-2 bg-amber-500 text-white rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="ctz:px-5 py-2 ctz:bg-amber-500 text-white ctz:rounded-md ctz:disabled:opacity-50 ctz:disabled:cursor-not-allowed"
                       onClick={async () => {
                         try {
                           setPublishing(true);
@@ -218,7 +219,7 @@ export function CMSProvider({
                       Publish{publishing ? "ing" : ""} changes
                     </button>
                     <button
-                      className="p-2 text-red-500"
+                      className="ctz:p-2 ctz:text-red-500"
                       onClick={() =>
                         setPageData(structuredClone(initialPageData))
                       }
@@ -240,15 +241,15 @@ export function CMSProvider({
                     )}
                   >
                     {disabledItems.length > 0 ? (
-                      <span className="absolute -top-2 -right-2 w-5 h-5 bg-red-500 rounded-full text-xs grid place-content-center text-white">
+                      <span className="absolute ctz:-top-2 -right-2 ctz:w-5 h-5 ctz:bg-red-500 ctz:rounded-full ctz:text-xs ctz:grid ctz:place-content-center ctz:text-white">
                         {disabledItems.length}
                       </span>
                     ) : null}
-                    <EyeOffIcon className="w-4 h-4" />
+                    <EyeOffIcon className="ctz:w-4 h-4" />
                   </button>
                 ) : null}
 
-                <button className="px-5 py-2 " onClick={onSignout}>
+                <button className="ctz:px-5 py-2 " onClick={onSignout}>
                   Sign out
                 </button>
               </div>
@@ -268,9 +269,9 @@ export function CMSProvider({
               if (widthPx === undefined) {
                 // Screen size = default → render without iframe
                 return (
-                  <div className="mx-auto bg-gray-50">
+                  <div className="ctz:mx-auto ctz:bg-gray-50">
                     <div className="@container">
-                      <div className="bg-white border-x border-gray-200">
+                      <div className="ctz:bg-white border-x ctz:border-gray-200">
                         {children}
                       </div>
                     </div>
@@ -281,10 +282,10 @@ export function CMSProvider({
               return (
                 <IframeWithStyles
                   widthPx={widthPx}
-                  className="mx-auto bg-gray-50 h-screen w-full"
+                  className="ctz:mx-auto bg-gray-50 ctz:h-screen w-full"
                 >
                   <div className="@container">
-                    <div className="bg-white border-x border-gray-200">
+                    <div className="ctz:bg-white border-x ctz:border-gray-200">
                       {children}
                     </div>
                   </div>
@@ -309,6 +310,7 @@ export function CMSProvider({
           <Toaster />
         </>
       )}
+      </div>
     </CMSContext.Provider>
   );
 }

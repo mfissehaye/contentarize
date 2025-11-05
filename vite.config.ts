@@ -35,5 +35,9 @@ export default defineConfig(() => {
         },
       },
     },
+    // Ensure CSS is properly handled
+    css: {
+      inject: false, // Don't inject CSS into JS (library mode)
+    },
   };
 });

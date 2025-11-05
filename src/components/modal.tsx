@@ -6,15 +6,15 @@ export default function Modal({
   onClose: () => void;
 }) {
   return (
-    <div className="z-50 fixed inset-0">
+    <div className="ctz:z-50 fixed ctz:inset-0">
       <div
-        className="absolute inset-0 bg-black/30"
+        className="absolute ctz:inset-0 ctz:bg-black/30"
         role="button"
         tabIndex={0}
         onKeyDown={() => {}}
         onClick={onClose}
       ></div>
-      <div className="absolute bg-white w-[450px] max-w-full right-0 inset-y-0 overflow-y-auto">
+      <div className="absolute ctz:bg-white ctz:w-[450px] max-w-full ctz:right-0 inset-y-0 ctz:overflow-y-auto">
         {children}
       </div>
     </div>

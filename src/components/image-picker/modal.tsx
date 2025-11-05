@@ -74,21 +74,21 @@ export default function Modal({
   }, [assetSource, activeTab]);
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex justify-center items-center">
+    <div className="fixed ctz:inset-0 ctz:bg-black/50 ctz:flex ctz:justify-center items-center">
       <div
-        className="absolute inset-0"
+        className="absolute ctz:inset-0"
         role="button"
         tabIndex={-100}
         onClick={onClose}
         onKeyDown={() => {}}
       ></div>
-      <div className="bg-white p-10 rounded-md max-w-4xl mx-auto space-y-5 w-full absolute inset-0 max-h-min self-center">
-        <div className="flex justify-between items-center">
-          <h2 className="text-lg font-semibold">Select Image</h2>
+      <div className="ctz:bg-white ctz:p-10 ctz:rounded-md ctz:max-w-4xl ctz:mx-auto space-y-5 ctz:w-full absolute ctz:inset-0 ctz:max-h-min ctz:self-center">
+        <div className="ctz:flex justify-between ctz:items-center">
+          <h2 className="ctz:text-lg font-semibold">Select Image</h2>
 
           <Tabs activeTab={activeTab} labels={availableTabs} onSelectTab={setActiveTab} />
 
-          <button onClick={onClose} className="text-red-500">
+          <button onClick={onClose} className="ctz:text-red-500">
             Close
           </button>
         </div>
@@ -96,7 +96,7 @@ export default function Modal({
           assetSource?.uploadAsset ? (
             <Uploader onUploaded={fetchImages} uploadAsset={assetSource.uploadAsset} />
           ) : (
-            <p className="text-sm text-gray-500">
+            <p className="ctz:text-sm ctz:text-gray-500">
               Uploading is disabled. Provide an assetSource.uploadAsset implementation to enable uploads.
             </p>
           )

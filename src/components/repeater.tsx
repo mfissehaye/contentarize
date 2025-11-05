@@ -50,24 +50,24 @@ export default function Repeater<Fields extends Field[]>({
         }}
         onKeyDown={() => {}}
         role="button"
-        className="relative max-w-full overflow-hidden min-w-10"
+        className="relative ctz:max-w-full ctz:overflow-hidden min-w-10"
       >
         {items.length ? (
-          <div className="opacity-20 relative pointer-events-none pl-5 cursor-pointer">
+          <div className="ctz:opacity-20 relative pointer-events-none ctz:pl-5 ctz:cursor-pointer">
             {children(items[items.length - 1], items.length - 1)}
           </div>
         ) : (
-          <button className="pl-12">Add an Item</button>
+          <button className="ctz:pl-12">Add an Item</button>
         )}
-        {/* <div className="absolute inset-0 rounded flex items-end justify-center min-w-fit">
-          <div className="font-medium flex items-center space-x-2 whitespace-nowrap border text-gray-500 hover:bg-gray-100 w-full justify-center p-3 rounded transition-colors bg-gray-50">
-            <PlusIcon className="w-5 h-5" />
+        {/* <div className="absolute ctz:inset-0 rounded ctz:flex ctz:items-end justify-center ctz:min-w-fit">
+          <div className="ctz:font-medium ctz:flex ctz:items-center ctz:space-x-2 whitespace-nowrap border ctz:text-gray-500 hover:bg-gray-100 ctz:w-full ctz:justify-center ctz:p-3 rounded ctz:transition-colors ctz:bg-gray-50">
+            <PlusIcon className="ctz:w-5 h-5" />
             <span>Add {_startCase(id)}</span>
           </div>
         </div> */}
 
-        <button className="border-2 border-black rounded-full absolute top-1/2 -translate-y-1/2 left-3 w-6 h-6 grid place-items-center bg-white [&_*]:text-black!">
-          <BsPlus className="w-5 h-5 text-black" />
+        <button className="ctz:border-2 ctz:border-black rounded-full absolute ctz:top-1/2 ctz:-translate-y-1/2 ctz:left-3 ctz:w-6 h-6 ctz:grid ctz:place-items-center ctz:bg-white [&_*]:text-black!">
+          <BsPlus className="ctz:w-5 h-5 ctz:text-black" />
         </button>
       </div>
     </>

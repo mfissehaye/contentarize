@@ -157,15 +157,15 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({
   }
 
   return (
-    <div className="border border-gray-300 rounded-lg overflow-hidden bg-white">
+    <div className="border ctz:border-gray-300 ctz:rounded-lg ctz:overflow-hidden ctz:bg-white">
       <Toolbar editor={editor} />
       <EditorContent
         editor={editor}
-        className="min-h-[200px] prose prose-sm sm:prose lg:prose-lg xl:prose-2xl max-w-none"
+        className="ctz:min-h-[200px] prose prose-sm sm:prose lg:prose-lg xl:prose-2xl max-w-none"
         placeholder={placeholder}
       />
       {editor.storage.characterCount && (
-        <div className="px-3 py-2 text-xs text-gray-500 border-t border-gray-200 bg-gray-50">
+        <div className="ctz:px-3 py-2 ctz:text-xs ctz:text-gray-500 border-t ctz:border-gray-200 bg-gray-50">
           {editor.storage.characterCount.characters()} characters, {editor.storage.characterCount.words()} words
         </div>
       )}

@@ -25,20 +25,20 @@ export default function Uploader({
   };
 
   return (
-    <div className="space-y-3">
-      <div className="grid grid-cols-5 gap-10">
+    <div className="ctz:space-y-3">
+      <div className="ctz:grid grid-cols-5 ctz:gap-10">
         {stagedImages.map((_, i) => (
           <div key={`staged-image-${i}`} className="space-y-3">
-            <div className="w-32 h-32 rounded bg-gray-100 overflow-hidden">
+            <div className="ctz:w-32 h-32 rounded ctz:bg-gray-100 ctz:overflow-hidden">
               <img
                 src={URL.createObjectURL(_)}
                 alt="Staged"
-                className="w-full h-full object-cover"
+                className="ctz:w-full h-full ctz:object-cover"
               />
             </div>
             <button
               type="button"
-              className="btn block w-full p-2.5 rounded-md bg-black text-white uppercase tracking-wide text-sm"
+              className="btn ctz:block ctz:w-full ctz:p-2.5 ctz:rounded-md ctz:bg-black text-white uppercase ctz:tracking-wide text-sm"
               onClick={() => upload(_)}
             >
               Upload
@@ -46,10 +46,10 @@ export default function Uploader({
           </div>
         ))}
       </div>
-      <div className="p-10 rounded border border-dashed flex flex-col justify-center items-center space-y-1 bg-gray-50">
+      <div className="ctz:p-10 rounded border ctz:border-dashed ctz:flex flex-col ctz:justify-center items-center ctz:space-y-1 ctz:bg-gray-50">
         <input
           type="file"
-          className="hidden"
+          className="ctz:hidden"
           multiple
           ref={imagePickerRef}
           onChange={(e) => {
@@ -61,9 +61,9 @@ export default function Uploader({
         <button
           type="button"
           onClick={() => imagePickerRef.current?.click()}
-          className="inline-flex flex-col items-center"
+          className="ctz:inline-flex flex-col ctz:items-center"
         >
-          <UploadCloudIcon className="w-10 h-10" />
+          <UploadCloudIcon className="ctz:w-10 h-10" />
           <span>Upload File</span>
         </button>
       </div>

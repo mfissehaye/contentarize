@@ -78,74 +78,74 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
   return (
     <div>
       {/* Header */}
-      <div className="p-5 bg-gray-100 flex justify-between items-center sticky top-0">
-        <h1 className="font-semibold">SEO &amp; Metadata Settings</h1>
-        <button type="button" onClick={onClose} className="md:hidden">
-          <XIcon className="w-5 h-5" />
+      <div className="ctz:p-5 ctz:bg-gray-100 ctz:flex ctz:justify-between items-center sticky ctz:top-0">
+        <h1 className="ctz:font-semibold">SEO &amp; Metadata Settings</h1>
+        <button type="button" onClick={onClose} className="ctz:md:hidden">
+          <XIcon className="ctz:w-5 h-5" />
         </button>
       </div>
 
       {/* Form */}
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={handleSubmit(onSubmit)} className="ctz:space-y-6">
         {/* ===========================
             BASIC SEO FIELDS
         ============================ */}
-        <section className="space-y-3 p-5">
-          <h2 className="font-semibold text-lg mb-3">Basic Metadata</h2>
+        <section className="space-y-3 ctz:p-5">
+          <h2 className="ctz:font-semibold text-lg ctz:mb-3">Basic Metadata</h2>
           <div className="space-y-2">
-            <label htmlFor="title" className="font-medium">
+            <label htmlFor="title" className="ctz:font-medium">
               Title
             </label>
             <input
               id="title"
               {...register("title")}
               type="text"
-              className="p-3 w-full border rounded focus:outline-none"
+              className="ctz:p-3 ctz:w-full border rounded ctz:focus:outline-none"
             />
           </div>
 
-          <div className="space-y-2 mt-3">
-            <label htmlFor="description" className="font-medium">
+          <div className="ctz:space-y-2 mt-3">
+            <label htmlFor="description" className="ctz:font-medium">
               Description
             </label>
             <textarea
               id="description"
               {...register("description")}
-              className="p-3 w-full border rounded focus:outline-none"
+              className="ctz:p-3 ctz:w-full border rounded ctz:focus:outline-none"
             ></textarea>
           </div>
 
-          <div className="space-y-2 mt-3">
-            <label htmlFor="keywords" className="font-medium">
+          <div className="ctz:space-y-2 mt-3">
+            <label htmlFor="keywords" className="ctz:font-medium">
               Keywords
             </label>
             <textarea
               id="keywords"
               {...register("keywords")}
-              className="p-3 w-full border rounded focus:outline-none"
+              className="ctz:p-3 ctz:w-full border rounded ctz:focus:outline-none"
             ></textarea>
           </div>
 
-          <div className="space-y-2 mt-3">
-            <label htmlFor="canonicalUrl" className="font-medium">
+          <div className="ctz:space-y-2 mt-3">
+            <label htmlFor="canonicalUrl" className="ctz:font-medium">
               Canonical URL
             </label>
             <input
               id="canonicalUrl"
               {...register("canonicalUrl")}
               type="text"
-              className="p-3 w-full border rounded focus:outline-none"
+              className="ctz:p-3 ctz:w-full border rounded ctz:focus:outline-none"
             />
           </div>
 
-          <div className="space-y-2 mt-3">
-            <label htmlFor="robots" className="font-medium">
+          <div className="ctz:space-y-2 mt-3">
+            <label htmlFor="robots" className="ctz:font-medium">
               Robots
             </label>
             <select
               id="robots"
               {...register("robots")}
-              className="p-3 w-full border rounded focus:outline-none"
+              className="ctz:p-3 ctz:w-full border rounded ctz:focus:outline-none"
             >
               <option value="index, follow">index, follow</option>
               <option value="noindex, follow">noindex, follow</option>
@@ -158,8 +158,8 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
         {/* ===========================
             OPEN GRAPH
         ============================ */}
-        <section className="space-y-3 p-5">
-          <h2 className="font-semibold text-lg mt-8 mb-3">
+        <section className="ctz:space-y-3 p-5">
+          <h2 className="ctz:font-semibold text-lg ctz:mt-8 mb-3">
             Open Graph (Facebook, LinkedIn)
           </h2>
 
@@ -171,15 +171,15 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
             ["og:type", "OG Type"],
             ["og:site_name", "OG Site Name"],
           ].map(([id, label]) => (
-            <div className="space-y-2" key={id}>
-              <label htmlFor={id} className="font-medium">
+            <div className="ctz:space-y-2" key={id}>
+              <label htmlFor={id} className="ctz:font-medium">
                 {label}
               </label>
               <input
                 id={id}
                 {...register(id as keyof MetaContentFormData)}
                 type="text"
-                className="p-3 w-full border rounded focus:outline-none"
+                className="ctz:p-3 ctz:w-full border rounded ctz:focus:outline-none"
               />
             </div>
           ))}
@@ -188,19 +188,19 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
         {/* ===========================
             TWITTER CARD
         ============================ */}
-        <section className="space-y-3 p-5">
-          <h2 className="font-semibold text-lg mt-8 mb-3">
+        <section className="ctz:space-y-3 p-5">
+          <h2 className="ctz:font-semibold text-lg ctz:mt-8 mb-3">
             Twitter Card Metadata
           </h2>
 
-          <div className="space-y-2">
-            <label htmlFor="twitter:card" className="font-medium">
+          <div className="ctz:space-y-2">
+            <label htmlFor="twitter:card" className="ctz:font-medium">
               Card Type
             </label>
             <select
               id="twitter:card"
               {...register("twitter:card")}
-              className="p-3 w-full border rounded focus:outline-none"
+              className="ctz:p-3 ctz:w-full border rounded ctz:focus:outline-none"
             >
               <option value="summary">summary</option>
               <option value="summary_large_image">summary_large_image</option>
@@ -212,15 +212,15 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
             ["twitter:description", "Twitter Description"],
             ["twitter:image", "Twitter Image URL"],
           ].map(([id, label]) => (
-            <div className="space-y-2" key={id}>
-              <label htmlFor={id} className="font-medium">
+            <div className="ctz:space-y-2" key={id}>
+              <label htmlFor={id} className="ctz:font-medium">
                 {label}
               </label>
               <input
                 id={id}
                 {...register(id as keyof MetaContentFormData)}
                 type="text"
-                className="p-3 w-full border rounded focus:outline-none"
+                className="ctz:p-3 ctz:w-full border rounded ctz:focus:outline-none"
               />
             </div>
           ))}
@@ -229,31 +229,31 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
         {/* ===========================
             ADVANCED OPTIONS
         ============================ */}
-        <section className="space-y-3 p-5">
-          <h2 className="font-semibold text-lg mt-8 mb-3">Advanced Options</h2>
-          <div className="space-y-2">
-            <label htmlFor="themeColor" className="font-medium">
+        <section className="ctz:space-y-3 p-5">
+          <h2 className="ctz:font-semibold text-lg ctz:mt-8 mb-3">Advanced Options</h2>
+          <div className="ctz:space-y-2">
+            <label htmlFor="themeColor" className="ctz:font-medium">
               Theme Color
             </label>
             <input
               id="themeColor"
               {...register("themeColor")}
               type="color"
-              className="h-10 w-16 border rounded cursor-pointer"
+              className="ctz:h-10 w-16 border rounded ctz:cursor-pointer"
             />
           </div>
         </section>
 
-        <section className="mt-10 space-y-3 p-5">
-          <h2 className="font-semibold text-lg mb-3">Google Search Preview</h2>
-          <div className="rounded-md p-4 bg-white border border-gray-100">
-            <p className="text-[#202124] text-lg font-medium leading-snug">
+        <section className="ctz:mt-10 space-y-3 ctz:p-5">
+          <h2 className="ctz:font-semibold text-lg ctz:mb-3">Google Search Preview</h2>
+          <div className="ctz:rounded-md ctz:p-4 ctz:bg-white border ctz:border-gray-100">
+            <p className="text-[#202124] ctz:text-lg font-medium ctz:leading-snug">
               {watch("title") || "Example Page Title - KBK Tech"}
             </p>
-            <p className="text-[#202124] text-sm text-green-700">
+            <p className="text-[#202124] ctz:text-sm ctz:text-green-700">
               {watch("canonicalUrl") || "https://kbk-tech.com/example-page"}
             </p>
-            <p className="text-[#4d5156] text-sm mt-1">
+            <p className="text-[#4d5156] ctz:text-sm ctz:mt-1">
               {watch("description") ||
                 "This is a short description that might appear in Google search results."}
             </p>
@@ -263,10 +263,10 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
         {/* ===========================
             SUBMIT BUTTON
         ============================ */}
-        <div className="sticky bottom-0 p-5 bg-gray-50 border-t border-gray-200">
+        <div className="sticky ctz:bottom-0 ctz:p-5 ctz:bg-gray-50 border-t ctz:border-gray-200">
           <button
             type="submit"
-            className="btn w-full block p-3 rounded-full"
+            className="btn ctz:w-full ctz:block ctz:p-3 ctz:rounded-full"
           >
             Save SEO Settings
           </button>
