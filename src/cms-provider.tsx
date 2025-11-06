@@ -8,7 +8,6 @@ import {
 } from "lucide-react";
 import { isEqual as _isEqual } from "lodash-es";
 import ContentifyForm from "./contentify-form";
-import { ContextType, Field, PageData, User, AssetSource } from "./types";
 import {
   type ReactNode,
   createContext,
@@ -16,14 +15,15 @@ import {
   useMemo,
   useEffect,
 } from "react";
-import SigninIcon from "./components/icons/signin-icon";
-import toast, { Toaster } from "react-hot-toast";
-import { BsLaptop, BsPhone, BsTablet } from "react-icons/bs";
-import useLocalStorage from "./utils/use-local-storage";
-import { IconType } from "react-icons/lib";
-import MetaContentForm from "./meta-content-form";
 import Modal from "./components/modal";
+import { IconType } from "react-icons/lib";
+import toast, { Toaster } from "react-hot-toast";
+import MetaContentForm from "./meta-content-form";
+import useLocalStorage from "./utils/use-local-storage";
+import SigninIcon from "./components/icons/signin-icon";
+import { BsLaptop, BsPhone, BsTablet } from "react-icons/bs";
 import { IframeWithStyles } from "./components/IframeWithStyles";
+import { ContextType, Field, PageData, User, AssetSource } from "./types";
 // CSS is imported in index.ts to ensure styles are bundled
 
 export const CMSContext = createContext<ContextType>({
@@ -154,7 +154,7 @@ export function CMSProvider({
                 "ctz:py-3 ctz:sticky ctz:top-0 ctz:z-50 ctz:font-semibold ctz:max-w-full ctz:overflow-hidden"
               )}
             >
-              <div className="ctz:container ctz:flex ctz:flex-col ctz:lg:flex-row ctz:items-center ctz:justify-between ctz:space-y-3 ctz:lg:space-y-0 ctz:lg:space-x-3">
+              <div className="ctz:container ctz:flex ctz:flex-col ctz:lg:flex-row ctz:items-center ctz:justify-between ctz:space-y-3 ctz:lg:space-y-0 ctz:lg:space-x-3 ctz:mx-auto">
                 {editMode ? (
                   <>
                     <div>
@@ -290,7 +290,7 @@ export function CMSProvider({
                     widthPx={widthPx}
                     className="ctz:mx-auto ctz:bg-gray-50 ctz:h-screen ctz:w-full"
                   >
-                    <div className="@container">
+                    <div className="ctz:@container">
                       <div className="ctz:bg-white ctz:border-x ctz:border-gray-200">
                         {children}
                       </div>
