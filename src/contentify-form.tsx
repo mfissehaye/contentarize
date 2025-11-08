@@ -163,7 +163,8 @@ export default function ContentifyForm({ onClose }: { onClose: () => void }) {
               label={input?.label}
               checked={Boolean(watch(input.id) || false)}
               onChange={(checked) =>
-                setValue(input.id, checked ? "_blank" : "_self")
+                // @ts-expect-error - checked is boolean
+                setValue(input.id, checked)
               }
             />
           ) : input.type === "url" ? (
@@ -193,7 +194,7 @@ export default function ContentifyForm({ onClose }: { onClose: () => void }) {
                 type="text"
                 id={id}
                 placeholder={input?.label}
-                className="ctz:p-3 ctz:w-full ctz:border ctz:rounded ctz:focus:ring-0 ctz:focus:outline-none"
+                className="ctz:p-3 ctz:w-full ctz:border ctz:border-gray-300/50 ctz:rounded ctz:focus:ring-0 ctz:focus:outline-none"
                 {...register(input.id)}
               />
             </div>
@@ -204,14 +205,14 @@ export default function ContentifyForm({ onClose }: { onClose: () => void }) {
             <div className="ctz:flex ctz:justify-between ctz:items-center">
               <div className="ctz:space-x-2">
                 <button
-                  className="ctz:p-2.5 ctz:rounded ctz:btn"
+                  className="ctz:p-2.5 ctz:rounded btn"
                   title="Move item first"
                   onClick={moveToFirst}
                 >
                   <ChevronsLeft className="ctz:w-5 ctz:h-5" />
                 </button>
                 <button
-                  className="ctz:p-2.5 ctz:rounded ctz:btn"
+                  className="ctz:p-2.5 ctz:rounded btn"
                   title="Move item up"
                   onClick={moveUp}
                 >
@@ -220,14 +221,14 @@ export default function ContentifyForm({ onClose }: { onClose: () => void }) {
               </div>
               <div className="ctz:space-x-2">
                 <button
-                  className="ctz:p-2.5 ctz:rounded ctz:btn"
+                  className="ctz:p-2.5 ctz:rounded btn"
                   title="Move item down"
                   onClick={moveDown}
                 >
                   <ChevronRight className="ctz:w-5 ctz:h-5" />
                 </button>
                 <button
-                  className="ctz:p-2.5 ctz:rounded ctz:btn"
+                  className="ctz:p-2.5 ctz:rounded btn"
                   title="Move item last"
                   onClick={moveToEnd}
                 >
@@ -239,7 +240,7 @@ export default function ContentifyForm({ onClose }: { onClose: () => void }) {
 
           <button
             type="submit"
-            className="ctz:btn ctz:w-full ctz:block ctz:p-3 ctz:rounded-full"
+            className="btn ctz:w-full ctz:block ctz:p-3 ctz:rounded-full"
           >
             Save
           </button>

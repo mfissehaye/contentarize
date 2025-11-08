@@ -156,7 +156,7 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
               id="title"
               {...register("title")}
               type="text"
-              className="ctz:p-3 ctz:w-full ctz:border ctz:rounded ctz:focus:outline-none"
+              className="ctz:p-3 ctz:w-full ctz:border ctz:border-gray-300/50 ctz:rounded ctz:focus:outline-none"
             />
           </div>
 
@@ -167,7 +167,7 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
             <textarea
               id="description"
               {...register("description")}
-              className="ctz:p-3 ctz:w-full ctz:border ctz:rounded ctz:focus:outline-none"
+              className="ctz:p-3 ctz:w-full ctz:border ctz:border-gray-300/50 ctz:rounded ctz:focus:outline-none"
             ></textarea>
           </div>
 
@@ -178,7 +178,7 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
             <textarea
               id="keywords"
               {...register("keywords")}
-              className="ctz:p-3 ctz:w-full ctz:border ctz:rounded ctz:focus:outline-none"
+              className="ctz:p-3 ctz:w-full ctz:border ctz:border-gray-300/50 ctz:rounded ctz:focus:outline-none"
             ></textarea>
           </div>
 
@@ -190,7 +190,7 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
               id="canonicalUrl"
               {...register("canonicalUrl")}
               type="text"
-              className="ctz:p-3 ctz:w-full ctz:border ctz:rounded ctz:focus:outline-none"
+              className="ctz:p-3 ctz:w-full ctz:border ctz:border-gray-300/50 ctz:rounded ctz:focus:outline-none"
             />
           </div>
 
@@ -201,7 +201,7 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
             <select
               id="robots"
               {...register("robots")}
-              className="ctz:p-3 ctz:w-full ctz:border ctz:rounded ctz:focus:outline-none"
+              className="ctz:p-3 ctz:w-full ctz:border ctz:border-gray-300/50 ctz:rounded ctz:focus:outline-none"
             >
               <option value="index, follow">index, follow</option>
               <option value="noindex, follow">noindex, follow</option>
@@ -235,7 +235,7 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
                 id={id}
                 {...register(id as keyof MetaContentFormData)}
                 type="text"
-                className="ctz:p-3 ctz:w-full ctz:border ctz:rounded ctz:focus:outline-none"
+                className="ctz:p-3 ctz:w-full ctz:border ctz:border-gray-300/50 ctz:rounded ctz:focus:outline-none"
               />
             </div>
           ))}
@@ -256,7 +256,7 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
             <select
               id="twitter:card"
               {...register("twitter:card")}
-              className="ctz:p-3 ctz:w-full ctz:border ctz:rounded ctz:focus:outline-none"
+              className="ctz:p-3 ctz:w-full ctz:border ctz:border-gray-300/50 ctz:rounded ctz:focus:outline-none"
             >
               <option value="summary">summary</option>
               <option value="summary_large_image">summary_large_image</option>
@@ -276,7 +276,7 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
                 id={id}
                 {...register(id as keyof MetaContentFormData)}
                 type="text"
-                className="ctz:p-3 ctz:w-full ctz:border ctz:rounded ctz:focus:outline-none"
+                className="ctz:p-3 ctz:w-full ctz:border ctz:border-gray-300/50 ctz:rounded ctz:focus:outline-none"
               />
             </div>
           ))}
@@ -297,7 +297,7 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
               id="themeColor"
               {...register("themeColor")}
               type="color"
-              className="ctz:h-10 ctz:w-16 ctz:border ctz:rounded ctz:cursor-pointer"
+              className="ctz:h-10 ctz:w-16 ctz:border ctz:border-gray-300/50 ctz:rounded ctz:cursor-pointer"
             />
           </div>
         </section>
@@ -306,7 +306,7 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
           <h2 className="ctz:font-semibold ctz:text-lg ctz:mb-3">
             Google Search Preview
           </h2>
-          <div className="ctz:rounded-md ctz:p-4 ctz:bg-white ctz:border ctz:border-gray-100">
+          <div className="ctz:rounded-md ctz:p-4 ctz:bg-white ctz:border ctz:border-gray-300/50 ">
             <p className="ctz:text-[#202124] ctz:text-lg ctz:font-medium ctz:leading-snug">
               {watch("title") || "Example Page Title - KBK Tech"}
             </p>
@@ -326,7 +326,7 @@ export default function SeoSettingsForm({ onClose }: { onClose: () => void }) {
         <div className="ctz:sticky ctz:bottom-0 ctz:p-5 ctz:bg-gray-50 ctz:border-t ctz:border-gray-200">
           <button
             type="submit"
-            className="ctz:btn ctz:w-full ctz:block ctz:p-3 ctz:rounded-full"
+            className="btn ctz:w-full ctz:block ctz:p-3 ctz:rounded-full"
           >
             Save SEO Settings
           </button>

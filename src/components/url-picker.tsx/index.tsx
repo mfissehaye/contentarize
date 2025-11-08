@@ -50,6 +50,7 @@ export default function URLPickerRef({
     <>
       <div className="relative">
         <input
+          type="text"
           value={search}
           placeholder={label}
           onChange={(e) => {
